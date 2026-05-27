@@ -478,19 +478,26 @@
         <div class="form-row-inline">
           <div class="form-group">
             <label for="name">Nome</label>
-            <input type="text" id="name" placeholder="O teu nome" />
+            <input type="text" id="name" placeholder="O teu nome" required />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="tu@email.com" />
+            <input type="email" id="email" placeholder="tu@email.com" required />
           </div>
         </div>
 
         <div class="form-row-inline">
           <div class="form-group">
+            <label for="phone">Número de Telemóvel</label>
+            <input type="tel" id="phone" placeholder="+351 9XXXXXXXX" required />
+          </div>
+          <div class="form-group">
             <label for="city">Cidade</label>
             <input type="text" id="city" placeholder="Porto, Gaia, Espinho…" />
           </div>
+        </div>
+
+        <div class="form-row-inline">
           <div class="form-group">
             <label for="pets">Quantos pets tens?</label>
             <select id="pets">
@@ -519,6 +526,7 @@
             <option value="">Selecciona…</option>
             <option value="dono">Dono de pet</option>
             <option value="cuidador">Prestador de serviços</option>
+            <option value="empresa">Empresa</option>
             <option value="ambos">Ambos</option>
           </select>
         </div>
@@ -563,6 +571,7 @@
   async function submitForm() {
     const name    = document.getElementById('name').value.trim();
     const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
     const city    = document.getElementById('city').value.trim();
     const pets    = document.getElementById('pets').value;
     const pettype = document.getElementById('pettype').value;
@@ -570,7 +579,7 @@
     const why     = document.getElementById('why').value.trim();
     const agree   = document.getElementById('agree').checked;
 
-    if (!name || !email) { alert('Por favor preenche o nome e o email.'); return; }
+    if (!name || !email || !phone) { alert('Por favor preenche o nome, email e número de telemóvel.'); return; }
     if (!agree) { alert('Por favor aceita os termos para continuar.'); return; }
 
     const btn = document.getElementById('submit-btn');
@@ -581,6 +590,7 @@
     const formData = new FormData();
     formData.append('name',            name);
     formData.append('email',           email);
+    formData.append('telemovel',       phone);
     formData.append('cidade',          city    || '—');
     formData.append('numero_de_pets',  pets    || '—');
     formData.append('tipo_de_animal',  pettype || '—');
