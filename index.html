@@ -1,13 +1,615 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/landingpage.html">
-  <meta name="robots" content="noindex">
-  <title>Redirecionando…</title>
-  <script>location.replace('/landingpage.html');</script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PetLink — a place for true soulmates</title>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #fdffe6;
+    --sage: #b8cba0;
+    --lavender: #c5c3e0;
+    --moss: #7a9e6e;
+    --charcoal: #2c2c2a;
+    --soft-black: #1a1a18;
+    --muted: #6b6b60;
+    --card-bg: rgba(255,255,240,0.75);
+    --border: rgba(100,110,80,0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--soft-black);
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(253,255,230,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Averia Libre', cursive;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--soft-black);
+    letter-spacing: -0.02em;
+  }
+  .nav-cta {
+    background: var(--soft-black); color: var(--cream);
+    padding: 0.55rem 1.4rem;
+    border-radius: 100px;
+    font-size: 0.85rem; font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.75; }
+
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 8rem 2rem 6rem;
+    text-align: center;
+  }
+  .blob {
+    position: absolute; border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+  .blob-1 {
+    width: 520px; height: 520px;
+    background: var(--lavender); opacity: 0.55;
+    top: -80px; left: -120px;
+    animation: float1 8s ease-in-out infinite;
+  }
+  .blob-2 {
+    width: 460px; height: 460px;
+    background: var(--sage); opacity: 0.5;
+    bottom: -60px; right: -80px;
+    animation: float2 10s ease-in-out infinite;
+  }
+  .blob-3 {
+    width: 340px; height: 340px;
+    background: #d4e8b0; opacity: 0.4;
+    top: 40%; left: 55%;
+    animation: float1 12s ease-in-out infinite reverse;
+  }
+  @keyframes float1 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(24px,-20px) } }
+  @keyframes float2 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(-20px,16px) } }
+
+  .hero-eyebrow {
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--muted); text-transform: uppercase;
+    margin-bottom: 1.5rem; position: relative;
+  }
+  .hero h1 {
+    font-family: 'Averia Libre', cursive;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 700; line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--soft-black);
+    max-width: 760px;
+    margin-bottom: 1.5rem; position: relative;
+  }
+  .hero h1 em { font-style: italic; font-weight: 300; color: var(--moss); }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--muted); line-height: 1.65;
+    max-width: 480px; margin: 0 auto 2.5rem; position: relative;
+  }
+  .hero-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(120,158,110,0.12);
+    border: 0.5px solid rgba(120,158,110,0.3);
+    border-radius: 100px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem; color: var(--moss); font-weight: 500;
+    position: relative; text-decoration: none;
+  }
+  .hero-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--moss); display: inline-block; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:0.3 } }
+
+  .mockup-strip {
+    padding: 4rem 2rem 5rem;
+    display: flex; justify-content: center; align-items: flex-end; gap: 1.5rem;
+    flex-wrap: wrap; position: relative;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .phone-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
+    transition: transform 0.4s ease;
+  }
+  .phone-wrap:hover { transform: translateY(-12px); }
+  .phone-wrap:nth-child(2) { transform: translateY(-28px); }
+  .phone-wrap:nth-child(2):hover { transform: translateY(-40px); }
+  .phone-wrap:nth-child(3) { transform: translateY(-14px); }
+  .phone-wrap:nth-child(3):hover { transform: translateY(-26px); }
+  .phone-frame {
+    width: 200px; border-radius: 30px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.07);
+    border: 6px solid rgba(255,255,255,0.7);
+    background: #fdffe6; position: relative;
+  }
+  .phone-frame img { width: 100%; display: block; }
+  .phone-caption { font-family: 'Averia Libre', cursive; font-size: 0.85rem; color: var(--muted); text-align: center; }
+
+  section { padding: 7rem 2rem; position: relative; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
+    color: var(--muted); text-transform: uppercase; margin-bottom: 1.2rem;
+  }
+  .section-title {
+    font-family: 'Averia Libre', cursive;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.15;
+    letter-spacing: -0.025em; color: var(--soft-black); margin-bottom: 1rem;
+  }
+  .section-title em { font-style: italic; font-weight: 300; color: var(--moss); }
+  .section-body { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 540px; }
+
+  .what-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    margin-top: 4rem; align-items: start;
+  }
+  @media (max-width: 700px) { .what-grid { grid-template-columns: 1fr; } }
+  .feature-card {
+    background: var(--card-bg); border: 0.5px solid var(--border);
+    border-radius: 20px; padding: 2rem 1.75rem; backdrop-filter: blur(8px);
+  }
+  .feature-icon {
+    width: 44px; height: 44px; border-radius: 12px;
+    background: rgba(120,158,110,0.14);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem; margin-bottom: 1.1rem;
+  }
+  .feature-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
+  .feature-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
+
+  .team-section { background: rgba(200,210,185,0.12); }
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
+  @media (max-width: 700px) { .team-grid { grid-template-columns: 1fr; } }
+  .team-card {
+    background: var(--card-bg); border: 0.5px solid var(--border);
+    border-radius: 24px; overflow: hidden; transition: transform 0.35s ease;
+  }
+  .team-card:hover { transform: translateY(-8px); }
+  .team-avatar {
+    width: 100%; height: 260px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .team-avatar-blob { position: absolute; border-radius: 50%; filter: blur(40px); }
+  .avatar-initial {
+    font-family: 'Averia Libre', cursive; font-size: 5rem; font-weight: 700;
+    color: var(--soft-black); opacity: 0.18; position: relative; z-index: 1; line-height: 1;
+  }
+  .team-photo-placeholder {
+    width: 110px; height: 110px; border-radius: 50%;
+    background: rgba(255,255,255,0.5); border: 2px solid rgba(120,158,110,0.25);
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; z-index: 3;
+    font-family: 'Averia Libre', cursive; font-size: 2.5rem; font-weight: 700; color: var(--moss);
+  }
+  .team-info { padding: 1.5rem 1.75rem 2rem; }
+  .team-role { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.4rem; }
+  .team-name { font-family: 'Averia Libre', cursive; font-size: 1.6rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.6rem; }
+  .team-bio { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+  .photos-section { padding: 5rem 2rem; }
+  .photos-label { text-align: center; }
+  .photos-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    margin-top: 3rem; max-width: 960px; margin-left: auto; margin-right: auto;
+  }
+  .photos-grid > :nth-child(1) { grid-column: span 2; }
+  .photos-grid > :nth-child(5) { grid-column: span 2; }
+  @media (max-width: 600px) {
+    .photos-grid { grid-template-columns: 1fr; }
+    .photos-grid > * { grid-column: span 1 !important; }
+  }
+  .photo-card {
+    border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; position: relative;
+    background: var(--card-bg); border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.5rem;
+  }
+  .photo-card-blob { position: absolute; border-radius: 50%; filter: blur(50px); pointer-events: none; }
+  .photo-caption { font-family: 'Averia Libre', cursive; font-size: 1rem; color: var(--soft-black); opacity: 0.5; position: relative; z-index: 2; }
+  .photo-emoji { font-size: 2rem; position: relative; z-index: 2; }
+
+  .beta-section { padding: 7rem 2rem; position: relative; overflow: hidden; }
+  .beta-inner {
+    max-width: 680px; margin: 0 auto;
+    background: var(--card-bg); border: 0.5px solid var(--border);
+    border-radius: 32px; padding: 3.5rem;
+    backdrop-filter: blur(12px); position: relative; z-index: 1;
+  }
+  .beta-inner .section-title { margin-bottom: 0.6rem; }
+  .beta-inner .section-body { margin-bottom: 2.5rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; color: var(--muted); text-transform: uppercase; }
+  .form-group input, .form-group select, .form-group textarea {
+    background: rgba(255,255,245,0.8); border: 0.5px solid rgba(100,110,80,0.25);
+    border-radius: 12px; padding: 0.75rem 1rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--soft-black);
+    outline: none; transition: border-color 0.2s; resize: none;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--moss); background: rgba(255,255,245,0.98);
+  }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(100,100,80,0.4); }
+  .form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  @media (max-width: 600px) { .form-row-inline { grid-template-columns: 1fr; } }
+  .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; min-width: 18px; border-radius: 5px; margin-top: 2px; accent-color: var(--moss); cursor: pointer; }
+  .checkbox-group label { font-size: 0.88rem; color: var(--muted); line-height: 1.55; cursor: pointer; }
+  .submit-btn {
+    width: 100%; background: var(--soft-black); color: var(--cream);
+    border: none; border-radius: 100px; padding: 0.9rem 2rem;
+    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
+    cursor: pointer; transition: opacity 0.2s, transform 0.15s;
+    position: relative; overflow: hidden;
+  }
+  .submit-btn:hover { opacity: 0.82; }
+  .submit-btn:active { transform: scale(0.99); }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+  .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem; }
+
+  .success-msg { display: none; text-align: center; padding: 2rem 0; }
+  .success-emoji { font-size: 3rem; margin-bottom: 1rem; }
+  .success-msg h3 { font-family: 'Averia Libre', cursive; font-size: 1.8rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
+  .success-msg p { font-size: 0.95rem; color: var(--muted); }
+
+  footer {
+    padding: 2.5rem 2rem; border-top: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-logo { font-family: 'Averia Libre', cursive; font-size: 1.1rem; font-weight: 700; color: var(--soft-black); }
+  footer p { font-size: 0.8rem; color: var(--muted); }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
 </head>
 <body>
-  <p>Se não fores redirecionado automaticamente, <a href="/landingpage.html">clica aqui</a>.</p>
+
+<nav>
+  <div class="nav-logo">🐾 PetLink</div>
+  <a href="#beta" class="nav-cta">Preenche o form</a>
+</nav>
+
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <p class="hero-eyebrow reveal">Beta Aberto</p>
+  <h1 class="reveal reveal-delay-1">
+    A app para as tuas<br/><em>almas gémeas</em> patudas
+  </h1>
+  <p class="hero-sub reveal reveal-delay-2">
+    Serviços de cuidado, agendamentos e acompanhamento para os teus animais — tudo num só lugar.
+  </p>
+  <a href="#beta" class="hero-pill reveal reveal-delay-3">
+    <span></span>
+    Preenche o form para usar
+  </a>
+</section>
+
+<div class="mockup-strip">
+  <div class="phone-wrap reveal">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/inicio.svg" alt="PetLink splash screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
+    </div>
+    <span class="phone-caption">Splash</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-1">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/home.svg" alt="PetLink onboarding" style="width:100%;height:400px;object-fit:cover;display:block;" />
+    </div>
+    <span class="phone-caption">Onboarding</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-2">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/home.svg" alt="PetLink home screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
+    </div>
+    <span class="phone-caption">Home</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-1">
+    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="PetLink services list" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <span class="phone-caption">Serviços</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-2">
+    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="PetLink petsitting" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <span class="phone-caption">Petsitting</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-3">
+    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="PetLink agendar" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <span class="phone-caption">Agendar</span>
+  </div>
+  <div class="phone-wrap reveal">
+    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="PetLink pets" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <span class="phone-caption">Pets</span>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label reveal">O que é</p>
+    <h2 class="section-title reveal reveal-delay-1">Uma app feita com <em>amor</em><br/>para quem ama os seus pets</h2>
+    <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, do grooming à medicação. Com PetLink, tens tudo organizado.</p>
+    <div class="what-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🐾</div>
+        <h3>Perfil do teu pet</h3>
+        <p>Regista tudo sobre o teu animal: raça, peso, idade, vacinas, relatórios médicos e muito mais.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon">📍</div>
+        <h3>Cuidadores perto de ti</h3>
+        <p>Encontra petsitters, groomers e dog walkers na tua zona com avaliações reais e preços transparentes.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon">📅</div>
+        <h3>Agendamento fácil</h3>
+        <p>Marca serviços em segundos, recebe lembretes e acompanha o estado dos agendamentos em tempo real.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon">🏥</div>
+        <h3>Historial de saúde</h3>
+        <p>Guarda consultas, vacinas e medicamentos num só lugar. Nunca mais perdes nenhum registo importante.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="section-inner">
+    <p class="section-label reveal">Quem somos</p>
+    <h2 class="section-title reveal reveal-delay-1">Feito por pessoas que<br/><em>também têm pets</em></h2>
+    <p class="section-body reveal reveal-delay-2">Somos três amigos do Porto com uma missão: tornar a vida dos donos de animais muito mais fácil e organizada.</p>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #e8d4f0 0%, #c5c3e0 100%); background-image: url('images/imagesFounders/founder2.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <div class="team-info">
+          <p class="team-role">CEO & Co-founder</p>
+          <h3 class="team-name">Rita</h3>
+          <p class="team-bio">A mente por trás da visão. Rita combina experiência em gestão de produto com uma paixão genuína por animais. É ela que define para onde o PetLink vai — e a que ritmo chega lá.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #d4f0d8 0%, #b8cba0 100%); background-image: url('images/imagesFounders/whatsapp-contact.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <div class="team-info">
+          <p class="team-role">Designer & Co-founder</p>
+          <h3 class="team-name">Bia</h3>
+          <p class="team-bio">Responsável por tudo o que és capaz de ver e sentir no PetLink. Bia transforma ideias complexas em interfaces limpas, intuitivas e com aquele toque especial que nos distingue.</p>
+        </div>
+      </div>
+      <div class="team-card reveal reveal-delay-2">
+        <div class="team-avatar" style="background: linear-gradient(135deg, #fdf0d0 0%, #f0d8a0 100%); background-image: url('images/imagesFounders/founder1.jpg'); background-size: cover; background-position: center;">
+        </div>
+        <div class="team-info">
+          <p class="team-role">Developer & Co-founder</p>
+          <h3 class="team-name">Diogo</h3>
+          <p class="team-bio">O arquitecto técnico do PetLink. Diogo transforma designs e ideias em código robusto, rápido e fiável. É ele que faz a magia acontecer — linha a linha, commit a commit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="photos-section">
+  <div style="max-width:1080px;margin:0 auto;">
+    <p class="section-label reveal photos-label">Bastidores</p>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Os nossos <em>soulmates</em></h2>
+    <div class="photos-grid">
+      <div class="photo-card reveal" style="background:linear-gradient(135deg,#e8d4f0,#c5c3e0);">
+        <div class="photo-card-blob" style="width:200px;height:200px;background:#b8a8d8;top:-40px;left:-40px;"></div>
+        <span class="photo-emoji">🐕</span><span class="photo-caption">Flora, a nossa mascote</span>
+      </div>
+      <div class="photo-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#d4f0d8,#b8cba0);">
+        <div class="photo-card-blob" style="width:180px;height:180px;background:#a8d0a8;bottom:-30px;right:-30px;"></div>
+        <span class="photo-emoji">🐈</span><span class="photo-caption">Boris, o gato do Diogo</span>
+      </div>
+      <div class="photo-card reveal reveal-delay-2" style="background:linear-gradient(135deg,#fdf0d0,#f0d8a0);">
+        <div class="photo-card-blob" style="width:160px;height:160px;background:#e8d088;top:-20px;right:-20px;"></div>
+        <span class="photo-emoji">🐾</span><span class="photo-caption">Primeiros wireframes</span>
+      </div>
+      <div class="photo-card reveal" style="background:linear-gradient(135deg,#fdffe6,#d4e8b0);">
+        <div class="photo-card-blob" style="width:180px;height:180px;background:#b8cba0;bottom:-20px;left:-20px;"></div>
+        <span class="photo-emoji">💻</span><span class="photo-caption">A equipa em modo dev</span>
+      </div>
+      <div class="photo-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#fbe8e8,#f0c8c8);">
+        <div class="photo-card-blob" style="width:200px;height:200px;background:#e8a8a8;top:-30px;right:-30px;"></div>
+        <span class="photo-emoji">🎨</span><span class="photo-caption">Design sessions com a Bia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="beta-section" id="beta">
+  <div class="blob blob-1" style="opacity:0.3;width:400px;height:400px;"></div>
+  <div class="blob blob-2" style="opacity:0.25;width:350px;height:350px;"></div>
+
+  <div class="beta-inner reveal">
+    <div id="form-content">
+      <p class="section-label">Beta Aberto</p>
+      <h2 class="section-title">Preenche o formulário para usar</h2>
+      <p class="section-body">Estamos a aceitar utilizadores para experimentar a PetLink. Entra agora no Beta e ajuda-nos a criar a melhor app para os teus patudos.</p>
+
+      <div style="margin-top:2rem;">
+        <div class="form-row-inline">
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" id="name" placeholder="O teu nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="tu@email.com" required />
+          </div>
+        </div>
+
+        <div class="form-row-inline">
+          <div class="form-group">
+            <label for="phone">Número de Telemóvel</label>
+            <input type="tel" id="phone" placeholder="+351 9XXXXXXXX" required />
+          </div>
+          <div class="form-group">
+            <label for="city">Cidade</label>
+            <input type="text" id="city" placeholder="Porto, Gaia, Espinho…" />
+          </div>
+        </div>
+
+        <div class="form-row-inline">
+          <div class="form-group">
+            <label for="pets">Quantos pets tens?</label>
+            <select id="pets">
+              <option value="">Selecciona…</option>
+              <option value="1">1 pet</option>
+              <option value="2">2 pets</option>
+              <option value="3">3 ou mais</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pettype">Tipo de animal</label>
+          <select id="pettype">
+            <option value="">Selecciona…</option>
+            <option value="cao">Cão 🐕</option>
+            <option value="gato">Gato 🐈</option>
+            <option value="ambos">Cão e Gato 🐾</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Quero usar a app como…</label>
+          <select id="role">
+            <option value="">Selecciona…</option>
+            <option value="dono">Dono de pet</option>
+            <option value="cuidador">Prestador de serviços</option>
+            <option value="empresa">Empresa</option>
+            <option value="ambos">Ambos</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="why">Porquê o PetLink? (opcional)</label>
+          <textarea id="why" rows="3" placeholder="Conta-nos o que mais te interessa na app…"></textarea>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="agree" />
+          <label for="agree">Aceito receber novidades sobre o PetLink e percebo que os meus dados são usados apenas para este fim.</label>
+        </div>
+
+        <button class="submit-btn" id="submit-btn" onclick="submitForm()">
+          Quero entrar no Beta 🐾
+        </button>
+        <p class="form-note">Sem spam. Prometemos. 🤞</p>
+      </div>
+    </div>
+
+    <div class="success-msg" id="success-msg">
+      <div class="success-emoji">🎉</div>
+      <h3>Estás na lista!</h3>
+      <p id="success-text">Obrigado pela tua candidatura. Vamos entrar em contacto em breve com as próximas novidades do PetLink.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">🐾 PetLink</div>
+  <div style="display: flex; gap: 2rem; align-items: center;">
+    <p>Feito com ❤️ no Porto · 2025</p>
+    <div style="display: flex; gap: 1.2rem;">
+      <a href="https://linkedin.com/in/rita" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Rita</a>
+      <a href="https://linkedin.com/in/bia" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Bia</a>
+      <a href="https://linkedin.com/in/diogo" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Diogo</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  async function submitForm() {
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const city    = document.getElementById('city').value.trim();
+    const pets    = document.getElementById('pets').value;
+    const pettype = document.getElementById('pettype').value;
+    const role    = document.getElementById('role').value;
+    const why     = document.getElementById('why').value.trim();
+    const agree   = document.getElementById('agree').checked;
+
+    if (!name || !email || !phone) { alert('Por favor preenche o nome, email e número de telemóvel.'); return; }
+    if (!agree) { alert('Por favor aceita os termos para continuar.'); return; }
+
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'A enviar…';
+
+    const formData = new FormData();
+    formData.append('name',            name);
+    formData.append('email',           email);
+    formData.append('telemovel',       phone);
+    formData.append('cidade',          city    || '—');
+    formData.append('numero_de_pets',  pets    || '—');
+    formData.append('tipo_de_animal',  pettype || '—');
+    formData.append('perfil',          role    || '—');
+    formData.append('mensagem',        why     || '—');
+    formData.append('_subject',  '🐾 Nova candidatura ao Beta — PetLink');
+    formData.append('_captcha',  'false');
+    formData.append('_template', 'table');
+
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/diogoluisteixeira@gmail.com', {
+        method:  'POST',
+        headers: { 'Accept': 'application/json' },
+        body:    formData
+      });
+
+      const data = await res.json();
+
+      if (data.success === 'true' || data.success === true) {
+        document.getElementById('form-content').style.display = 'none';
+        const s = document.getElementById('success-msg');
+        s.style.display = 'block';
+        document.getElementById('success-text').textContent =
+          `Obrigado, ${name}! Vamos entrar em contacto para ${email} em breve.`;
+      } else {
+        throw new Error('Envio falhou');
+      }
+    } catch (err) {
+      alert('Ocorreu um erro ao enviar. Tenta novamente ou contacta-nos directamente.');
+      btn.disabled = false;
+      btn.textContent = 'Quero entrar no Beta 🐾';
+    }
+  }
+</script>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
