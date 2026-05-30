@@ -539,7 +539,7 @@ function hexToRgb(hex) {
 function copyResult() {
   const winner = Object.entries(scores).sort((a,b) => b[1]-a[1])[0][0];
   const p = profiles[winner];
-  const text = `Fiz o quiz da Pet Lynk e sou um ${p.name} ${p.emoji}\nDescobre o teu perfil em petlynk.app`;
+  const text = `Fiz o quiz da Pet Lynk e sou um ${p.name} ${p.emoji}\nDescobre o teu perfil em https://pet-lynk.vercel.app`;
   navigator.clipboard.writeText(text).catch(() => {});
   const btn = event.target;
   btn.textContent = '✓ Copiado!';
