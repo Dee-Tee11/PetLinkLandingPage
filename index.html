@@ -43,6 +43,18 @@
     color: var(--soft-black);
     letter-spacing: -0.02em;
   }
+  .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+  .nav-quiz {
+    background: rgba(120,158,110,0.12);
+    border: 0.5px solid rgba(120,158,110,0.35);
+    color: var(--moss);
+    padding: 0.5rem 1.1rem;
+    border-radius: 100px;
+    font-size: 0.82rem; font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .nav-quiz:hover { background: rgba(120,158,110,0.2); }
   .nav-cta {
     background: var(--soft-black); color: var(--cream);
     padding: 0.55rem 1.4rem;
@@ -105,6 +117,7 @@
     font-size: 1.1rem; color: var(--muted); line-height: 1.65;
     max-width: 480px; margin: 0 auto 2.5rem; position: relative;
   }
+  .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; position: relative; }
   .hero-pill {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: rgba(120,158,110,0.12);
@@ -112,10 +125,50 @@
     border-radius: 100px;
     padding: 0.6rem 1.2rem;
     font-size: 0.88rem; color: var(--moss); font-weight: 500;
-    position: relative; text-decoration: none;
+    text-decoration: none;
   }
   .hero-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--moss); display: inline-block; animation: pulse 2s ease-in-out infinite; }
+  .hero-quiz-pill {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(197,195,224,0.25);
+    border: 0.5px solid rgba(124,111,212,0.3);
+    border-radius: 100px;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.88rem; color: #534ab7; font-weight: 500;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .hero-quiz-pill:hover { background: rgba(197,195,224,0.4); }
   @keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:0.3 } }
+
+  /* QUIZ BANNER */
+  .quiz-banner {
+    background: linear-gradient(135deg, rgba(197,195,224,0.3) 0%, rgba(184,203,160,0.3) 100%);
+    border: 0.5px solid rgba(124,111,212,0.2);
+    border-radius: 24px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 680px; margin: 0 auto;
+  }
+  .quiz-banner-emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .quiz-banner h3 {
+    font-family: 'Averia Libre', cursive;
+    font-size: 1.5rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem;
+  }
+  .quiz-banner p { font-size: 0.93rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+  .quiz-banner-profiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .quiz-banner-tag {
+    background: var(--card-bg); border: 0.5px solid var(--border);
+    border-radius: 100px; padding: 0.3rem 0.8rem;
+    font-size: 0.78rem; color: var(--soft-black);
+  }
+  .quiz-banner-btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--soft-black); color: var(--cream);
+    border-radius: 100px; padding: 0.75rem 1.75rem;
+    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
+    text-decoration: none; transition: opacity 0.2s, transform 0.15s;
+  }
+  .quiz-banner-btn:hover { opacity: 0.8; transform: translateY(-1px); }
 
   .mockup-strip {
     padding: 4rem 2rem 5rem;
@@ -186,18 +239,6 @@
     width: 100%; height: 260px;
     display: flex; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
-  }
-  .team-avatar-blob { position: absolute; border-radius: 50%; filter: blur(40px); }
-  .avatar-initial {
-    font-family: 'Averia Libre', cursive; font-size: 5rem; font-weight: 700;
-    color: var(--soft-black); opacity: 0.18; position: relative; z-index: 1; line-height: 1;
-  }
-  .team-photo-placeholder {
-    width: 110px; height: 110px; border-radius: 50%;
-    background: rgba(255,255,255,0.5); border: 2px solid rgba(120,158,110,0.25);
-    display: flex; align-items: center; justify-content: center;
-    position: absolute; z-index: 3;
-    font-family: 'Averia Libre', cursive; font-size: 2.5rem; font-weight: 700; color: var(--moss);
   }
   .team-info { padding: 1.5rem 1.75rem 2rem; }
   .team-role { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.4rem; }
@@ -288,7 +329,10 @@
 
 <nav>
   <div class="nav-logo">🐾 PetLink</div>
-  <a href="#beta" class="nav-cta">Preenche o form</a>
+  <div class="nav-right">
+    <a href="quiz.html" class="nav-quiz">✨ Descobre a tua aura</a>
+    <a href="#beta" class="nav-cta">Preenche o form</a>
+  </div>
 </nav>
 
 <section class="hero">
@@ -302,10 +346,15 @@
   <p class="hero-sub reveal reveal-delay-2">
     Serviços de cuidado, agendamentos e acompanhamento para os teus animais — tudo num só lugar.
   </p>
-  <a href="#beta" class="hero-pill reveal reveal-delay-3">
-    <span></span>
-    Preenche o form para usar
-  </a>
+  <div class="hero-ctas reveal reveal-delay-3">
+    <a href="#beta" class="hero-pill">
+      <span></span>
+      Preenche o form para usar
+    </a>
+    <a href="quiz.html" class="hero-quiz-pill">
+      ✨ Descobre a tua aura
+    </a>
+  </div>
 </section>
 
 <div class="mockup-strip">
@@ -372,6 +421,22 @@
         <p>Guarda consultas, vacinas e medicamentos num só lugar. Nunca mais perdes nenhum registo importante.</p>
       </div>
     </div>
+
+    <!-- QUIZ BANNER -->
+    <div class="reveal" style="margin-top: 4rem;">
+      <div class="quiz-banner">
+        <div class="quiz-banner-emoji">✨</div>
+        <h3>Descobre a Aura do teu animal</h3>
+        <p>4 perguntas rápidas para descobrir que tipo de tutor és — e qual funcionalidade da Pet Lynk foi feita para ti.</p>
+        <div class="quiz-banner-profiles">
+          <span class="quiz-banner-tag">🛡️ Tutor Protetor</span>
+          <span class="quiz-banner-tag">🏥 Tutor Cuidador</span>
+          <span class="quiz-banner-tag">🌍 Tutor Explorador</span>
+          <span class="quiz-banner-tag">📋 Tutor Organizado</span>
+        </div>
+        <a href="quiz.html" class="quiz-banner-btn">Fazer o quiz →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -382,8 +447,7 @@
     <p class="section-body reveal reveal-delay-2">Somos três amigos do Porto com uma missão: tornar a vida dos donos de animais muito mais fácil e organizada.</p>
     <div class="team-grid">
       <div class="team-card reveal">
-        <div class="team-avatar" style="background: linear-gradient(135deg, #e8d4f0 0%, #c5c3e0 100%); background-image: url('images/imagesFounders/founder2.jpg'); background-size: cover; background-position: center;">
-        </div>
+        <div class="team-avatar" style="background: linear-gradient(135deg, #e8d4f0 0%, #c5c3e0 100%); background-image: url('images/imagesFounders/founder2.jpg'); background-size: cover; background-position: center;"></div>
         <div class="team-info">
           <p class="team-role">CEO & Co-founder</p>
           <h3 class="team-name">Rita</h3>
@@ -391,8 +455,7 @@
         </div>
       </div>
       <div class="team-card reveal reveal-delay-1">
-        <div class="team-avatar" style="background: linear-gradient(135deg, #d4f0d8 0%, #b8cba0 100%); background-image: url('images/imagesFounders/whatsapp-contact.jpg'); background-size: cover; background-position: center;">
-        </div>
+        <div class="team-avatar" style="background: linear-gradient(135deg, #d4f0d8 0%, #b8cba0 100%); background-image: url('images/imagesFounders/whatsapp-contact.jpg'); background-size: cover; background-position: center;"></div>
         <div class="team-info">
           <p class="team-role">Designer & Co-founder</p>
           <h3 class="team-name">Bia</h3>
@@ -400,8 +463,7 @@
         </div>
       </div>
       <div class="team-card reveal reveal-delay-2">
-        <div class="team-avatar" style="background: linear-gradient(135deg, #fdf0d0 0%, #f0d8a0 100%); background-image: url('images/imagesFounders/founder1.jpg'); background-size: cover; background-position: center;">
-        </div>
+        <div class="team-avatar" style="background: linear-gradient(135deg, #fdf0d0 0%, #f0d8a0 100%); background-image: url('images/imagesFounders/founder1.jpg'); background-size: cover; background-position: center;"></div>
         <div class="team-info">
           <p class="team-role">Developer & Co-founder</p>
           <h3 class="team-name">Diogo</h3>
@@ -462,7 +524,6 @@
             <input type="email" id="email" placeholder="tu@email.com" required />
           </div>
         </div>
-
         <div class="form-row-inline">
           <div class="form-group">
             <label for="phone">Número de Telemóvel</label>
@@ -473,7 +534,6 @@
             <input type="text" id="city" placeholder="Porto, Gaia, Espinho…" />
           </div>
         </div>
-
         <div class="form-row-inline">
           <div class="form-group">
             <label for="pets">Quantos pets tens?</label>
@@ -485,7 +545,6 @@
             </select>
           </div>
         </div>
-
         <div class="form-group">
           <label for="pettype">Tipo de animal</label>
           <select id="pettype">
@@ -496,7 +555,6 @@
             <option value="outro">Outro</option>
           </select>
         </div>
-
         <div class="form-group">
           <label for="role">Quero usar a app como…</label>
           <select id="role">
@@ -507,17 +565,14 @@
             <option value="ambos">Ambos</option>
           </select>
         </div>
-
         <div class="form-group">
           <label for="why">Porquê o PetLink? (opcional)</label>
           <textarea id="why" rows="3" placeholder="Conta-nos o que mais te interessa na app…"></textarea>
         </div>
-
         <div class="checkbox-group">
           <input type="checkbox" id="agree" />
           <label for="agree">Aceito receber novidades sobre o PetLink e percebo que os meus dados são usados apenas para este fim.</label>
         </div>
-
         <button class="submit-btn" id="submit-btn" onclick="submitForm()">
           Quero entrar no Beta 🐾
         </button>
@@ -538,9 +593,9 @@
   <div style="display: flex; gap: 2rem; align-items: center;">
     <p>Feito com ❤️ no Porto · 2025</p>
     <div style="display: flex; gap: 1.2rem;">
-      <a href="https://linkedin.com/in/rita" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Rita</a>
-      <a href="https://linkedin.com/in/bia" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Bia</a>
-      <a href="https://linkedin.com/in/diogo" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Diogo</a>
+      <a href="https://www.linkedin.com/in/rita-sousa-92993b2b2/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Rita</a>
+      <a href="https://www.linkedin.com/in/b-marques-965627305/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Bea</a>
+      <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Diogo</a>
     </div>
   </div>
 </footer>
@@ -588,9 +643,7 @@
         headers: { 'Accept': 'application/json' },
         body:    formData
       });
-
       const data = await res.json();
-
       if (data.success === 'true' || data.success === true) {
         document.getElementById('form-content').style.display = 'none';
         const s = document.getElementById('success-msg');
