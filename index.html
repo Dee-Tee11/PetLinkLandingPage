@@ -514,6 +514,9 @@
       <p class="section-body">Estamos a aceitar utilizadores para experimentar a PetLink. Entra agora no Beta e ajuda-nos a criar a melhor app para os teus patudos.</p>
 
       <div style="margin-top:2rem;">
+        <!-- Web3Forms access key — substitui pelo teu em https://web3forms.com -->
+        <input type="hidden" id="access_key" value="TUA_ACCESS_KEY_AQUI" />
+
         <div class="form-row-inline">
           <div class="form-group">
             <label for="name">Nome</label>
@@ -624,34 +627,34 @@
     btn.disabled = true;
     btn.textContent = 'A enviar…';
 
-    const formData = new FormData();
-    formData.append('name',            name);
-    formData.append('email',           email);
-    formData.append('telemovel',       phone);
-    formData.append('cidade',          city    || '—');
-    formData.append('numero_de_pets',  pets    || '—');
-    formData.append('tipo_de_animal',  pettype || '—');
-    formData.append('perfil',          role    || '—');
-    formData.append('mensagem',        why     || '—');
-    formData.append('_subject',  '🐾 Nova candidatura ao Beta — PetLink');
-    formData.append('_captcha',  'false');
-    formData.append('_template', 'table');
+    const payload = {
+      access_key: document.getElementById('access_key').value,
+      subject: '🐾 Nova candidatura ao Beta — PetLink',
+      name:            name,
+      email:           email,
+      telemovel:       phone,
+      cidade:          city    || '—',
+      numero_de_pets:  pets    || '—',
+      tipo_de_animal:  pettype || '—',
+      perfil:          role    || '—',
+      mensagem:        why     || '—',
+    };
 
     try {
-      const res = await fetch('https://formsubmit.co/ajax/diogoluisteixeira@gmail.com', {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method:  'POST',
-        headers: { 'Accept': 'application/json' },
-        body:    formData
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(payload)
       });
       const data = await res.json();
-      if (data.success === 'true' || data.success === true) {
+      if (data.success) {
         document.getElementById('form-content').style.display = 'none';
         const s = document.getElementById('success-msg');
         s.style.display = 'block';
         document.getElementById('success-text').textContent =
           `Obrigado, ${name}! Vamos entrar em contacto para ${email} em breve.`;
       } else {
-        throw new Error('Envio falhou');
+        throw new Error(data.message || 'Envio falhou');
       }
     } catch (err) {
       alert('Ocorreu um erro ao enviar. Tenta novamente ou contacta-nos directamente.');
