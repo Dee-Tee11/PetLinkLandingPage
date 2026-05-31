@@ -121,24 +121,70 @@
   }
   .quiz-banner-btn:hover { opacity: 0.8; transform: translateY(-1px); }
 
+  /* ===================== MOCKUP STRIP ===================== */
   .mockup-strip {
     padding: 4rem 2rem 5rem;
-    display: flex; justify-content: center; align-items: flex-end; gap: 1.5rem;
-    flex-wrap: wrap; position: relative; max-width: 1200px; margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
   }
-  .phone-wrap { display: flex; flex-direction: column; align-items: center; gap: 1rem; transition: transform 0.4s ease; }
-  .phone-wrap:hover { transform: translateY(-12px); }
-  .phone-wrap:nth-child(2) { transform: translateY(-28px); }
-  .phone-wrap:nth-child(2):hover { transform: translateY(-40px); }
-  .phone-wrap:nth-child(3) { transform: translateY(-14px); }
-  .phone-wrap:nth-child(3):hover { transform: translateY(-26px); }
+
+  /* Each phone wrapper — NO fixed translateY offsets here */
+  .phone-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    /* transform-origin at bottom so scale expands upward */
+    transform-origin: bottom center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* Start fully visible & in place — reveal will handle opacity/slide-in */
+  }
+
+  /* Hover: scale up slightly, expand outward from the bottom */
+  .phone-wrap:hover {
+    transform: scale(1.07);
+  }
+
+  /* Middle card (feature card) is a bit bigger by default */
+  .phone-wrap.featured {
+    transform: scale(1.06);
+  }
+  .phone-wrap.featured:hover {
+    transform: scale(1.13);
+  }
+
   .phone-frame {
-    width: 200px; border-radius: 30px; overflow: hidden;
+    width: 200px;
+    border-radius: 30px;
+    overflow: hidden;
     box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.07);
-    border: 6px solid rgba(255,255,255,0.7); background: #fdffe6; position: relative;
+    border: 6px solid rgba(255,255,255,0.7);
+    background: #fdffe6;
+    position: relative;
+    /* Smooth shadow on hover */
+    transition: box-shadow 0.35s ease;
+  }
+  .phone-wrap:hover .phone-frame {
+    box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 6px 18px rgba(0,0,0,0.09);
   }
   .phone-frame img { width: 100%; display: block; }
-  .phone-caption { font-family: 'Averia Libre', cursive; font-size: 0.85rem; color: var(--muted); text-align: center; }
+  .phone-caption {
+    font-family: 'Averia Libre', cursive;
+    font-size: 0.85rem;
+    color: var(--muted);
+    text-align: center;
+    transition: color 0.2s;
+  }
+  .phone-wrap:hover .phone-caption {
+    color: var(--soft-black);
+  }
+  /* ===================== END MOCKUP STRIP ===================== */
 
   section { padding: 7rem 2rem; position: relative; }
   .section-inner { max-width: 1080px; margin: 0 auto; }
@@ -224,7 +270,6 @@
     border-top: 0.5px solid var(--border);
     background: rgba(200,210,185,0.08);
   }
-
   .footer-inner {
     max-width: 900px;
     margin: 0 auto;
@@ -233,7 +278,6 @@
     align-items: center;
     gap: 0;
   }
-
   .footer-cta-row {
     text-align: center;
     margin-bottom: 3.5rem;
@@ -252,7 +296,6 @@
     font-weight: 700;
     color: var(--soft-black);
   }
-
   .footer-team {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -263,7 +306,6 @@
   @media (max-width: 640px) {
     .footer-team { grid-template-columns: 1fr; }
   }
-
   .footer-member-card {
     background: var(--card-bg);
     border: 0.5px solid var(--border);
@@ -277,7 +319,6 @@
     transition: transform 0.3s ease;
   }
   .footer-member-card:hover { transform: translateY(-4px); }
-
   .footer-member-role {
     font-size: 0.68rem;
     font-weight: 500;
@@ -303,14 +344,12 @@
     transition: opacity 0.2s;
   }
   .footer-member-card a:hover { opacity: 0.65; }
-
   .footer-divider {
     width: 100%;
     height: 0.5px;
     background: var(--border);
     margin-bottom: 2.5rem;
   }
-
   .footer-bottom {
     display: flex;
     flex-direction: column;
@@ -334,11 +373,56 @@
   }
   /* ===================== END FOOTER ===================== */
 
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  /* ===================== REVEAL ===================== */
+  /*
+    IMPORTANT: .reveal only controls opacity + translateY for the fade-in.
+    It must NOT fight with .phone-wrap's scale transform.
+    For phone-wrap elements we use a wrapper approach so the two transforms
+    don't cancel each other out.
+  */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
+
+  /*
+    Phone wrappers need special treatment:
+    The .reveal class uses transform: translateY(), but .phone-wrap also uses
+    transform: scale() on hover. CSS only allows ONE transform at a time on the
+    same element, so we separate them with an outer reveal wrapper and inner
+    phone-wrap. But since the HTML nests .reveal directly on .phone-wrap, we
+    handle this by overriding: when visible, the hover scale takes over cleanly.
+  */
+  .phone-wrap.reveal {
+    /* Use both transforms together when in reveal state */
+    transform: translateY(28px) scale(1);
+    transform-origin: bottom center;
+  }
+  .phone-wrap.reveal.visible {
+    transform: translateY(0) scale(1);
+  }
+  .phone-wrap.reveal.featured {
+    transform: translateY(28px) scale(1);
+  }
+  .phone-wrap.reveal.featured.visible {
+    transform: translateY(0) scale(1.06);
+  }
+
+  /* Hover overrides — applied only after the card is visible */
+  .phone-wrap.visible:hover {
+    transform: translateY(0) scale(1.07) !important;
+  }
+  .phone-wrap.featured.visible:hover {
+    transform: translateY(0) scale(1.13) !important;
+  }
 </style>
 </head>
 <body>
@@ -388,12 +472,6 @@
       <img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" style="width:100%;height:400px;object-fit:cover;display:block;" />
     </div>
     <span class="phone-caption">Onboarding</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/home.svg" alt="Pet Lynk home screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
-    </div>
-    <span class="phone-caption">Home</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
     <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk services list" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
@@ -609,14 +687,10 @@
 
 <footer>
   <div class="footer-inner">
-
-    <!-- Header text -->
     <div class="footer-cta-row">
       <p>Equipa</p>
       <h3>Interessado no projeto ou em algum de nós?</h3>
     </div>
-
-    <!-- Team cards -->
     <div class="footer-team">
       <div class="footer-member-card">
         <span class="footer-member-role">Designer & Product Lead</span>
@@ -634,16 +708,12 @@
         <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank">LinkedIn →</a>
       </div>
     </div>
-
     <div class="footer-divider"></div>
-
-    <!-- Logo + credit -->
     <div class="footer-bottom">
       <img src="images/logo/logo.svg" alt="Pet Lynk" class="footer-logo">
       <span class="footer-brand">Pet Lynk</span>
       <p class="footer-credit">Feito no Porto · © 2026 Pet Lynk</p>
     </div>
-
   </div>
 </footer>
 
