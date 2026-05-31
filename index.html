@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PetLink — a place for true soulmates</title>
+<link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,10 +39,17 @@
     border-bottom: 0.5px solid var(--border);
   }
   .nav-logo {
+    height: 35px;
+    object-fit: contain;
+  }
+  .nav-left {
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .nav-brand {
     font-family: 'Averia Libre', cursive;
-    font-size: 1.4rem; font-weight: 700;
+    font-size: 1.1rem; font-weight: 700;
     color: var(--soft-black);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.5px;
   }
   .nav-right { display: flex; align-items: center; gap: 0.75rem; }
   .nav-quiz {
@@ -222,7 +230,7 @@
     width: 44px; height: 44px; border-radius: 12px;
     background: rgba(120,158,110,0.14);
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem; margin-bottom: 1.1rem;
+    object-fit: contain; margin-bottom: 1.1rem;
   }
   .feature-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
   .feature-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
@@ -311,12 +319,20 @@
   .success-msg p { font-size: 0.95rem; color: var(--muted); }
 
   footer {
-    padding: 2.5rem 2rem; border-top: 0.5px solid var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 1rem;
+    padding: 4rem 2rem 3rem; border-top: 0.5px solid var(--border);
+    display: flex; flex-direction: column; align-items: center;
+    gap: 4rem;
   }
-  .footer-logo { font-family: 'Averia Libre', cursive; font-size: 1.1rem; font-weight: 700; color: var(--soft-black); }
-  footer p { font-size: 0.8rem; color: var(--muted); }
+  .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; width: 100%; max-width: 900px; margin: 0 auto; }
+  .footer-member { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .footer-member h3 { font-family: 'Averia Libre', cursive; font-size: 1.1rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.8rem; }
+  .footer-member p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.5; }
+  .footer-member a { color: var(--moss); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: opacity 0.3s; }
+  .footer-member a:hover { opacity: 0.7; }
+  .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; padding-top: 2rem; border-top: 0.5px solid var(--border); }
+  .footer-logo { height: 60px; object-fit: contain; }
+  .footer-credit { font-size: 0.8rem; color: var(--muted); }
+  footer p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
 
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -328,7 +344,10 @@
 <body>
 
 <nav>
-  <div class="nav-logo">🐾 PetLink</div>
+  <div class="nav-left">
+    <img src="images/logo/logo.svg" alt="PetLink" class="nav-logo">
+    <span class="nav-brand">Pet Lynk</span>
+  </div>
   <div class="nav-right">
     <a href="quiz.html" class="nav-quiz">✨ Descobre a tua aura</a>
     <a href="#beta" class="nav-cta">Preenche o form</a>
@@ -401,22 +420,22 @@
     <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, do grooming à medicação. Com PetLink, tens tudo organizado.</p>
     <div class="what-grid">
       <div class="feature-card reveal">
-        <div class="feature-icon">🐾</div>
+        <img src="images/logo/logo.svg" alt="pet profile" class="feature-icon">
         <h3>Perfil do teu pet</h3>
         <p>Regista tudo sobre o teu animal: raça, peso, idade, vacinas, relatórios médicos e muito mais.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-icon">📍</div>
+        <img src="images/logo/logo.svg" alt="location" class="feature-icon">
         <h3>Cuidadores perto de ti</h3>
         <p>Encontra petsitters, groomers e dog walkers na tua zona com avaliações reais e preços transparentes.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-icon">📅</div>
+        <img src="images/logo/logo.svg" alt="schedule" class="feature-icon">
         <h3>Agendamento fácil</h3>
         <p>Marca serviços em segundos, recebe lembretes e acompanha o estado dos agendamentos em tempo real.</p>
       </div>
       <div class="feature-card reveal reveal-delay-3">
-        <div class="feature-icon">🏥</div>
+        <img src="images/logo/logo.svg" alt="health" class="feature-icon">
         <h3>Historial de saúde</h3>
         <p>Guarda consultas, vacinas e medicamentos num só lugar. Nunca mais perdes nenhum registo importante.</p>
       </div>
@@ -592,13 +611,21 @@
 </section>
 
 <footer>
-  <div class="footer-logo">🐾 PetLink</div>
-  <div style="display: flex; gap: 2rem; align-items: center;">
-    <p>Feito com ❤️ no Porto · 2025</p>
-    <div style="display: flex; gap: 1.2rem;">
-      <a href="https://www.linkedin.com/in/rita-sousa-92993b2b2/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Rita</a>
-      <a href="https://www.linkedin.com/in/b-marques-965627305/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Bea</a>
-      <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank" style="color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.3s ease;" onmouseover="this.style.color='var(--moss)'" onmouseout="this.style.color='var(--muted)'">Diogo</a>
+  <div class="footer-top">
+    <div class="footer-member">Interessado no projeto ou em algum de nós?
+      <h3>Rita</h3>
+      <p>Designer & Product Lead</p>
+      <a href="https://www.linkedin.com/in/rita-sousa-92993b2b2/" target="_blank">LinkedIn →</a>
+    </div>
+    <div class="footer-member">
+      <h3>Bea</h3>
+      <p>Product & Growth</p>
+      <a href="https://www.linkedin.com/in/b-marques-965627305/" target="_blank">Interessado no projeto ou em algum de nós?</a>
+    </div>
+    <div class="footer-member">
+      <h3>Diogo</h3>
+      <p>Tech & Development</p>
+      <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank">Interessado no projeto ou em algum de nós?</a>
     </div>
   </div>
 </footer>

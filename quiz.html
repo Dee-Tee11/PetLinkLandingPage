@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>🐾 Que tipo de tutor és? — Pet Lynk</title>
+<link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,10 +63,9 @@ body {
 
 /* HEADER */
 .logo {
-  font-family: 'Averia Libre', cursive;
-  font-size: 1.2rem; font-weight: 700;
-  color: var(--soft-black); margin-bottom: 2.5rem;
-  letter-spacing: -0.02em;
+  height: 30px;
+  object-fit: contain;
+  margin-bottom: 2.5rem;
   opacity: 0; animation: fadeUp 0.6s 0.1s forwards;
 }
 
@@ -269,7 +269,7 @@ body {
 
 <div class="page-wrap">
 
-  <div class="logo">🐾 Pet Lynk</div>
+  <img src="images/logo/logo.svg" alt="PetLink" class="logo">
 
   <!-- INTRO -->
   <div id="screen-intro">
