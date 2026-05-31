@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PetLink — a place for true soulmates</title>
+<title>Pet Lynk — a place for true soulmates</title>
 <link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
@@ -38,38 +38,28 @@
     backdrop-filter: blur(12px);
     border-bottom: 0.5px solid var(--border);
   }
-  .nav-logo {
-    height: 35px;
-    object-fit: contain;
-  }
-  .nav-left {
-    display: flex; align-items: center; gap: 0.8rem;
-  }
+  .nav-logo { height: 35px; object-fit: contain; }
+  .nav-left { display: flex; align-items: center; gap: 0.8rem; }
   .nav-brand {
     font-family: 'Averia Libre', cursive;
     font-size: 1.1rem; font-weight: 700;
-    color: var(--soft-black);
-    letter-spacing: -0.5px;
+    color: var(--soft-black); letter-spacing: -0.5px;
   }
   .nav-right { display: flex; align-items: center; gap: 0.75rem; }
   .nav-quiz {
     background: rgba(120,158,110,0.12);
     border: 0.5px solid rgba(120,158,110,0.35);
     color: var(--moss);
-    padding: 0.5rem 1.1rem;
-    border-radius: 100px;
+    padding: 0.5rem 1.1rem; border-radius: 100px;
     font-size: 0.82rem; font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s;
+    text-decoration: none; transition: all 0.2s;
   }
   .nav-quiz:hover { background: rgba(120,158,110,0.2); }
   .nav-cta {
     background: var(--soft-black); color: var(--cream);
-    padding: 0.55rem 1.4rem;
-    border-radius: 100px;
+    padding: 0.55rem 1.4rem; border-radius: 100px;
     font-size: 0.85rem; font-weight: 500;
-    text-decoration: none;
-    transition: opacity 0.2s;
+    text-decoration: none; transition: opacity 0.2s;
   }
   .nav-cta:hover { opacity: 0.75; }
 
@@ -77,98 +67,51 @@
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     position: relative; overflow: hidden;
-    padding: 8rem 2rem 6rem;
-    text-align: center;
+    padding: 8rem 2rem 6rem; text-align: center;
   }
-  .blob {
-    position: absolute; border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
-  }
-  .blob-1 {
-    width: 520px; height: 520px;
-    background: var(--lavender); opacity: 0.55;
-    top: -80px; left: -120px;
-    animation: float1 8s ease-in-out infinite;
-  }
-  .blob-2 {
-    width: 460px; height: 460px;
-    background: var(--sage); opacity: 0.5;
-    bottom: -60px; right: -80px;
-    animation: float2 10s ease-in-out infinite;
-  }
-  .blob-3 {
-    width: 340px; height: 340px;
-    background: #d4e8b0; opacity: 0.4;
-    top: 40%; left: 55%;
-    animation: float1 12s ease-in-out infinite reverse;
-  }
+  .blob { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; }
+  .blob-1 { width: 520px; height: 520px; background: var(--lavender); opacity: 0.55; top: -80px; left: -120px; animation: float1 8s ease-in-out infinite; }
+  .blob-2 { width: 460px; height: 460px; background: var(--sage); opacity: 0.5; bottom: -60px; right: -80px; animation: float2 10s ease-in-out infinite; }
+  .blob-3 { width: 340px; height: 340px; background: #d4e8b0; opacity: 0.4; top: 40%; left: 55%; animation: float1 12s ease-in-out infinite reverse; }
   @keyframes float1 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(24px,-20px) } }
   @keyframes float2 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(-20px,16px) } }
 
-  .hero-eyebrow {
-    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em;
-    color: var(--muted); text-transform: uppercase;
-    margin-bottom: 1.5rem; position: relative;
-  }
+  .hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; }
   .hero h1 {
     font-family: 'Averia Libre', cursive;
-    font-size: clamp(3rem, 7vw, 5.5rem);
-    font-weight: 700; line-height: 1.08;
-    letter-spacing: -0.03em;
-    color: var(--soft-black);
-    max-width: 760px;
+    font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 700; line-height: 1.08;
+    letter-spacing: -0.03em; color: var(--soft-black); max-width: 760px;
     margin-bottom: 1.5rem; position: relative;
   }
   .hero h1 em { font-style: italic; font-weight: 300; color: var(--moss); }
-  .hero-sub {
-    font-size: 1.1rem; color: var(--muted); line-height: 1.65;
-    max-width: 480px; margin: 0 auto 2.5rem; position: relative;
-  }
+  .hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.65; max-width: 480px; margin: 0 auto 2.5rem; position: relative; }
   .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; position: relative; }
   .hero-pill {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(120,158,110,0.12);
-    border: 0.5px solid rgba(120,158,110,0.3);
-    border-radius: 100px;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.88rem; color: var(--moss); font-weight: 500;
-    text-decoration: none;
+    background: rgba(120,158,110,0.12); border: 0.5px solid rgba(120,158,110,0.3);
+    border-radius: 100px; padding: 0.6rem 1.2rem;
+    font-size: 0.88rem; color: var(--moss); font-weight: 500; text-decoration: none;
   }
   .hero-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--moss); display: inline-block; animation: pulse 2s ease-in-out infinite; }
   .hero-quiz-pill {
     display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(197,195,224,0.25);
-    border: 0.5px solid rgba(124,111,212,0.3);
-    border-radius: 100px;
-    padding: 0.6rem 1.2rem;
-    font-size: 0.88rem; color: #534ab7; font-weight: 500;
-    text-decoration: none; transition: all 0.2s;
+    background: rgba(197,195,224,0.25); border: 0.5px solid rgba(124,111,212,0.3);
+    border-radius: 100px; padding: 0.6rem 1.2rem;
+    font-size: 0.88rem; color: #534ab7; font-weight: 500; text-decoration: none; transition: all 0.2s;
   }
   .hero-quiz-pill:hover { background: rgba(197,195,224,0.4); }
   @keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:0.3 } }
 
-  /* QUIZ BANNER */
   .quiz-banner {
     background: linear-gradient(135deg, rgba(197,195,224,0.3) 0%, rgba(184,203,160,0.3) 100%);
-    border: 0.5px solid rgba(124,111,212,0.2);
-    border-radius: 24px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    max-width: 680px; margin: 0 auto;
+    border: 0.5px solid rgba(124,111,212,0.2); border-radius: 24px;
+    padding: 2.5rem 2rem; text-align: center; max-width: 680px; margin: 0 auto;
   }
   .quiz-banner-emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
-  .quiz-banner h3 {
-    font-family: 'Averia Libre', cursive;
-    font-size: 1.5rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem;
-  }
+  .quiz-banner h3 { font-family: 'Averia Libre', cursive; font-size: 1.5rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
   .quiz-banner p { font-size: 0.93rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
   .quiz-banner-profiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin-bottom: 1.5rem; }
-  .quiz-banner-tag {
-    background: var(--card-bg); border: 0.5px solid var(--border);
-    border-radius: 100px; padding: 0.3rem 0.8rem;
-    font-size: 0.78rem; color: var(--soft-black);
-  }
+  .quiz-banner-tag { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 100px; padding: 0.3rem 0.8rem; font-size: 0.78rem; color: var(--soft-black); }
   .quiz-banner-btn {
     display: inline-flex; align-items: center; gap: 0.5rem;
     background: var(--soft-black); color: var(--cream);
@@ -181,13 +124,9 @@
   .mockup-strip {
     padding: 4rem 2rem 5rem;
     display: flex; justify-content: center; align-items: flex-end; gap: 1.5rem;
-    flex-wrap: wrap; position: relative;
-    max-width: 1200px; margin: 0 auto;
+    flex-wrap: wrap; position: relative; max-width: 1200px; margin: 0 auto;
   }
-  .phone-wrap {
-    display: flex; flex-direction: column; align-items: center; gap: 1rem;
-    transition: transform 0.4s ease;
-  }
+  .phone-wrap { display: flex; flex-direction: column; align-items: center; gap: 1rem; transition: transform 0.4s ease; }
   .phone-wrap:hover { transform: translateY(-12px); }
   .phone-wrap:nth-child(2) { transform: translateY(-28px); }
   .phone-wrap:nth-child(2):hover { transform: translateY(-40px); }
@@ -196,58 +135,34 @@
   .phone-frame {
     width: 200px; border-radius: 30px; overflow: hidden;
     box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.07);
-    border: 6px solid rgba(255,255,255,0.7);
-    background: #fdffe6; position: relative;
+    border: 6px solid rgba(255,255,255,0.7); background: #fdffe6; position: relative;
   }
   .phone-frame img { width: 100%; display: block; }
   .phone-caption { font-family: 'Averia Libre', cursive; font-size: 0.85rem; color: var(--muted); text-align: center; }
 
   section { padding: 7rem 2rem; position: relative; }
   .section-inner { max-width: 1080px; margin: 0 auto; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em;
-    color: var(--muted); text-transform: uppercase; margin-bottom: 1.2rem;
-  }
+  .section-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.2rem; }
   .section-title {
-    font-family: 'Averia Libre', cursive;
-    font-size: clamp(2rem, 4vw, 3.2rem);
-    font-weight: 700; line-height: 1.15;
-    letter-spacing: -0.025em; color: var(--soft-black); margin-bottom: 1rem;
+    font-family: 'Averia Libre', cursive; font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700; line-height: 1.15; letter-spacing: -0.025em; color: var(--soft-black); margin-bottom: 1rem;
   }
   .section-title em { font-style: italic; font-weight: 300; color: var(--moss); }
   .section-body { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 540px; }
 
-  .what-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
-    margin-top: 4rem; align-items: start;
-  }
+  .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; align-items: start; }
   @media (max-width: 700px) { .what-grid { grid-template-columns: 1fr; } }
-  .feature-card {
-    background: var(--card-bg); border: 0.5px solid var(--border);
-    border-radius: 20px; padding: 2rem 1.75rem; backdrop-filter: blur(8px);
-  }
-  .feature-icon {
-    width: 44px; height: 44px; border-radius: 12px;
-    background: rgba(120,158,110,0.14);
-    display: flex; align-items: center; justify-content: center;
-    object-fit: contain; margin-bottom: 1.1rem;
-  }
+  .feature-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 20px; padding: 2rem 1.75rem; backdrop-filter: blur(8px); }
+  .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(120,158,110,0.14); display: flex; align-items: center; justify-content: center; object-fit: contain; margin-bottom: 1.1rem; }
   .feature-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
   .feature-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
 
   .team-section { background: rgba(200,210,185,0.12); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
   @media (max-width: 700px) { .team-grid { grid-template-columns: 1fr; } }
-  .team-card {
-    background: var(--card-bg); border: 0.5px solid var(--border);
-    border-radius: 24px; overflow: hidden; transition: transform 0.35s ease;
-  }
+  .team-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 24px; overflow: hidden; transition: transform 0.35s ease; }
   .team-card:hover { transform: translateY(-8px); }
-  .team-avatar {
-    width: 100%; height: 260px;
-    display: flex; align-items: center; justify-content: center;
-    position: relative; overflow: hidden;
-  }
+  .team-avatar { width: 100%; height: 260px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
   .team-info { padding: 1.5rem 1.75rem 2rem; }
   .team-role { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--moss); margin-bottom: 0.4rem; }
   .team-name { font-family: 'Averia Libre', cursive; font-size: 1.6rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.6rem; }
@@ -255,22 +170,11 @@
 
   .photos-section { padding: 5rem 2rem; }
   .photos-label { text-align: center; }
-  .photos-grid {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
-    margin-top: 3rem; max-width: 960px; margin-left: auto; margin-right: auto;
-  }
+  .photos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; max-width: 960px; margin-left: auto; margin-right: auto; }
   .photos-grid > :nth-child(1) { grid-column: span 2; }
   .photos-grid > :nth-child(5) { grid-column: span 2; }
-  @media (max-width: 600px) {
-    .photos-grid { grid-template-columns: 1fr; }
-    .photos-grid > * { grid-column: span 1 !important; }
-  }
-  .photo-card {
-    border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; position: relative;
-    background: var(--card-bg); border: 0.5px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    flex-direction: column; gap: 0.5rem;
-  }
+  @media (max-width: 600px) { .photos-grid { grid-template-columns: 1fr; } .photos-grid > * { grid-column: span 1 !important; } }
+  .photo-card { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; position: relative; background: var(--card-bg); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
   .photo-card-blob { position: absolute; border-radius: 50%; filter: blur(50px); pointer-events: none; }
   .photo-caption { font-family: 'Averia Libre', cursive; font-size: 1rem; color: var(--soft-black); opacity: 0.5; position: relative; z-index: 2; }
   .photo-emoji { font-size: 2rem; position: relative; z-index: 2; }
@@ -292,9 +196,7 @@
     font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--soft-black);
     outline: none; transition: border-color 0.2s; resize: none;
   }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    border-color: var(--moss); background: rgba(255,255,245,0.98);
-  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--moss); background: rgba(255,255,245,0.98); }
   .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(100,100,80,0.4); }
   .form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   @media (max-width: 600px) { .form-row-inline { grid-template-columns: 1fr; } }
@@ -305,34 +207,132 @@
     width: 100%; background: var(--soft-black); color: var(--cream);
     border: none; border-radius: 100px; padding: 0.9rem 2rem;
     font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
-    cursor: pointer; transition: opacity 0.2s, transform 0.15s;
-    position: relative; overflow: hidden;
+    cursor: pointer; transition: opacity 0.2s, transform 0.15s; position: relative; overflow: hidden;
   }
   .submit-btn:hover { opacity: 0.82; }
   .submit-btn:active { transform: scale(0.99); }
   .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
   .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem; }
-
   .success-msg { display: none; text-align: center; padding: 2rem 0; }
   .success-emoji { font-size: 3rem; margin-bottom: 1rem; }
   .success-msg h3 { font-family: 'Averia Libre', cursive; font-size: 1.8rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
   .success-msg p { font-size: 0.95rem; color: var(--muted); }
 
+  /* ===================== FOOTER ===================== */
   footer {
-    padding: 4rem 2rem 3rem; border-top: 0.5px solid var(--border);
-    display: flex; flex-direction: column; align-items: center;
-    gap: 4rem;
+    padding: 5rem 2rem 3rem;
+    border-top: 0.5px solid var(--border);
+    background: rgba(200,210,185,0.08);
   }
-  .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; width: 100%; max-width: 900px; margin: 0 auto; }
-  .footer-member { display: flex; flex-direction: column; align-items: center; text-align: center; }
-  .footer-member h3 { font-family: 'Averia Libre', cursive; font-size: 1.1rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.8rem; }
-  .footer-member p { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; line-height: 1.5; }
-  .footer-member a { color: var(--moss); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: opacity 0.3s; }
-  .footer-member a:hover { opacity: 0.7; }
-  .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 2rem; width: 100%; padding-top: 2rem; border-top: 0.5px solid var(--border); }
-  .footer-logo { height: 60px; object-fit: contain; }
-  .footer-credit { font-size: 0.8rem; color: var(--muted); }
-  footer p { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+
+  .footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .footer-cta-row {
+    text-align: center;
+    margin-bottom: 3.5rem;
+  }
+  .footer-cta-row p {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+  .footer-cta-row h3 {
+    font-family: 'Averia Libre', cursive;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--soft-black);
+  }
+
+  .footer-team {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
+  @media (max-width: 640px) {
+    .footer-team { grid-template-columns: 1fr; }
+  }
+
+  .footer-member-card {
+    background: var(--card-bg);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.35rem;
+    transition: transform 0.3s ease;
+  }
+  .footer-member-card:hover { transform: translateY(-4px); }
+
+  .footer-member-role {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--moss);
+  }
+  .footer-member-name {
+    font-family: 'Averia Libre', cursive;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--soft-black);
+  }
+  .footer-member-card a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--moss);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    transition: opacity 0.2s;
+  }
+  .footer-member-card a:hover { opacity: 0.65; }
+
+  .footer-divider {
+    width: 100%;
+    height: 0.5px;
+    background: var(--border);
+    margin-bottom: 2.5rem;
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .footer-logo { height: 52px; object-fit: contain; opacity: 0.85; }
+  .footer-brand {
+    font-family: 'Averia Libre', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--soft-black);
+    letter-spacing: -0.3px;
+  }
+  .footer-credit {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+  /* ===================== END FOOTER ===================== */
 
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -345,7 +345,7 @@
 
 <nav>
   <div class="nav-left">
-    <img src="images/logo/logo.svg" alt="PetLink" class="nav-logo">
+    <img src="images/logo/logo.svg" alt="Pet Lynk" class="nav-logo">
     <span class="nav-brand">Pet Lynk</span>
   </div>
   <div class="nav-right">
@@ -379,36 +379,36 @@
 <div class="mockup-strip">
   <div class="phone-wrap reveal">
     <div class="phone-frame">
-      <img src="images/imagesDemo/inicio.svg" alt="PetLink splash screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
+      <img src="images/imagesDemo/inicio.svg" alt="Pet Lynk splash screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
     </div>
     <span class="phone-caption">Splash</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
     <div class="phone-frame">
-      <img src="images/imagesDemo/home.svg" alt="PetLink onboarding" style="width:100%;height:400px;object-fit:cover;display:block;" />
+      <img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" style="width:100%;height:400px;object-fit:cover;display:block;" />
     </div>
     <span class="phone-caption">Onboarding</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-2">
     <div class="phone-frame">
-      <img src="images/imagesDemo/home.svg" alt="PetLink home screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
+      <img src="images/imagesDemo/home.svg" alt="Pet Lynk home screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
     </div>
     <span class="phone-caption">Home</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="PetLink services list" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk services list" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
     <span class="phone-caption">Serviços</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="PetLink petsitting" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="Pet Lynk petsitting" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
     <span class="phone-caption">Petsitting</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-3">
-    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="PetLink agendar" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk agendar" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
     <span class="phone-caption">Agendar</span>
   </div>
   <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="PetLink pets" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="Pet Lynk pets" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
     <span class="phone-caption">Pets</span>
   </div>
 </div>
@@ -417,7 +417,7 @@
   <div class="section-inner">
     <p class="section-label reveal">O que é</p>
     <h2 class="section-title reveal reveal-delay-1">Uma app feita com <em>amor</em><br/>para quem ama os seus pets</h2>
-    <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, do grooming à medicação. Com PetLink, tens tudo organizado.</p>
+    <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, do grooming à medicação. Com Pet Lynk, tens tudo organizado.</p>
     <div class="what-grid">
       <div class="feature-card reveal">
         <img src="images/logo/logo.svg" alt="pet profile" class="feature-icon">
@@ -441,7 +441,6 @@
       </div>
     </div>
 
-    <!-- QUIZ BANNER -->
     <div class="reveal" style="margin-top: 4rem;">
       <div class="quiz-banner">
         <div class="quiz-banner-emoji">✨</div>
@@ -470,7 +469,7 @@
         <div class="team-info">
           <p class="team-role">CEO & Co-founder</p>
           <h3 class="team-name">Rita</h3>
-          <p class="team-bio">A mente por trás da visão. Rita combina experiência em gestão de produto com uma paixão genuína por animais. É ela que define para onde o PetLink vai — e a que ritmo chega lá.</p>
+          <p class="team-bio">A mente por trás da visão. Rita combina experiência em gestão de produto com uma paixão genuína por animais. É ela que define para onde o Pet Lynk vai — e a que ritmo chega lá.</p>
         </div>
       </div>
       <div class="team-card reveal reveal-delay-1">
@@ -478,7 +477,7 @@
         <div class="team-info">
           <p class="team-role">Designer & Co-founder</p>
           <h3 class="team-name">Bia</h3>
-          <p class="team-bio">Responsável por tudo o que és capaz de ver e sentir no PetLink. Bia transforma ideias complexas em interfaces limpas, intuitivas e com aquele toque especial que nos distingue.</p>
+          <p class="team-bio">Responsável por tudo o que és capaz de ver e sentir no Pet Lynk. Bia transforma ideias complexas em interfaces limpas, intuitivas e com aquele toque especial que nos distingue.</p>
         </div>
       </div>
       <div class="team-card reveal reveal-delay-2">
@@ -486,7 +485,7 @@
         <div class="team-info">
           <p class="team-role">Developer & Co-founder</p>
           <h3 class="team-name">Diogo</h3>
-          <p class="team-bio">O arquitecto técnico do PetLink. Diogo transforma designs e ideias em código robusto, rápido e fiável. É ele que faz a magia acontecer — linha a linha, commit a commit.</p>
+          <p class="team-bio">O arquitecto técnico do Pet Lynk. Diogo transforma designs e ideias em código robusto, rápido e fiável. É ele que faz a magia acontecer — linha a linha, commit a commit.</p>
         </div>
       </div>
     </div>
@@ -530,12 +529,10 @@
     <div id="form-content">
       <p class="section-label">Beta Aberto</p>
       <h2 class="section-title">Preenche o formulário para usar</h2>
-      <p class="section-body">Estamos a aceitar utilizadores para experimentar a PetLink. Entra agora no Beta e ajuda-nos a criar a melhor app para os teus patudos.</p>
+      <p class="section-body">Estamos a aceitar utilizadores para experimentar a Pet Lynk. Entra agora no Beta e ajuda-nos a criar a melhor app para os teus patudos.</p>
 
       <div style="margin-top:2rem;">
-        <!-- Web3Forms access key — substitui pelo teu em https://web3forms.com -->
         <input type="hidden" id="access_key" value="9e8023e6-c581-43b7-9765-016d23d049d7" />
-
         <div class="form-row-inline">
           <div class="form-group">
             <label for="name">Nome</label>
@@ -588,12 +585,12 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="why">Porquê o PetLink? (opcional)</label>
+          <label for="why">Porquê o Pet Lynk? (opcional)</label>
           <textarea id="why" rows="3" placeholder="Conta-nos o que mais te interessa na app…"></textarea>
         </div>
         <div class="checkbox-group">
           <input type="checkbox" id="agree" />
-          <label for="agree">Aceito receber novidades sobre o PetLink e percebo que os meus dados são usados apenas para este fim.</label>
+          <label for="agree">Aceito receber novidades sobre o Pet Lynk e percebo que os meus dados são usados apenas para este fim.</label>
         </div>
         <button class="submit-btn" id="submit-btn" onclick="submitForm()">
           Quero entrar no Beta 🐾
@@ -605,28 +602,48 @@
     <div class="success-msg" id="success-msg">
       <div class="success-emoji">🎉</div>
       <h3>Estás na lista!</h3>
-      <p id="success-text">Obrigado pela tua candidatura. Vamos entrar em contacto em breve com as próximas novidades do PetLink.</p>
+      <p id="success-text">Obrigado pela tua candidatura. Vamos entrar em contacto em breve com as próximas novidades do Pet Lynk.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-top">
-    <div class="footer-member">Interessado no projeto ou em algum de nós?
-      <h3>Rita</h3>
-      <p>Designer & Product Lead</p>
-      <a href="https://www.linkedin.com/in/rita-sousa-92993b2b2/" target="_blank">LinkedIn →</a>
+  <div class="footer-inner">
+
+    <!-- Header text -->
+    <div class="footer-cta-row">
+      <p>Equipa</p>
+      <h3>Interessado no projeto ou em algum de nós?</h3>
     </div>
-    <div class="footer-member">
-      <h3>Bea</h3>
-      <p>Product & Growth</p>
-      <a href="https://www.linkedin.com/in/b-marques-965627305/" target="_blank">Interessado no projeto ou em algum de nós?</a>
+
+    <!-- Team cards -->
+    <div class="footer-team">
+      <div class="footer-member-card">
+        <span class="footer-member-role">Designer & Product Lead</span>
+        <span class="footer-member-name">Rita</span>
+        <a href="https://www.linkedin.com/in/rita-sousa-92993b2b2/" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="footer-member-card">
+        <span class="footer-member-role">Product & Growth</span>
+        <span class="footer-member-name">Bea</span>
+        <a href="https://www.linkedin.com/in/b-marques-965627305/" target="_blank">LinkedIn →</a>
+      </div>
+      <div class="footer-member-card">
+        <span class="footer-member-role">Tech & Development</span>
+        <span class="footer-member-name">Diogo</span>
+        <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank">LinkedIn →</a>
+      </div>
     </div>
-    <div class="footer-member">
-      <h3>Diogo</h3>
-      <p>Tech & Development</p>
-      <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank">Interessado no projeto ou em algum de nós?</a>
+
+    <div class="footer-divider"></div>
+
+    <!-- Logo + credit -->
+    <div class="footer-bottom">
+      <img src="images/logo/logo.svg" alt="Pet Lynk" class="footer-logo">
+      <span class="footer-brand">Pet Lynk</span>
+      <p class="footer-credit">Feito com 🐾 no Porto · © 2025 Pet Lynk</p>
     </div>
+
   </div>
 </footer>
 
@@ -656,22 +673,21 @@
 
     const payload = {
       access_key: document.getElementById('access_key').value,
-      subject: '🐾 Nova candidatura ao Beta — PetLink',
-      name:            name,
-      email:           email,
-      telemovel:       phone,
-      cidade:          city    || '—',
-      numero_de_pets:  pets    || '—',
-      tipo_de_animal:  pettype || '—',
-      perfil:          role    || '—',
-      mensagem:        why     || '—',
+      subject: '🐾 Nova candidatura ao Beta — Pet Lynk',
+      name, email,
+      telemovel: phone,
+      cidade: city || '—',
+      numero_de_pets: pets || '—',
+      tipo_de_animal: pettype || '—',
+      perfil: role || '—',
+      mensagem: why || '—',
     };
 
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
-        method:  'POST',
+        method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body:    JSON.stringify(payload)
+        body: JSON.stringify(payload)
       });
       const data = await res.json();
       if (data.success) {
