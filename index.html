@@ -130,28 +130,23 @@
     gap: 1.5rem;
     flex-wrap: wrap;
     position: relative;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
   }
 
-  /* Each phone wrapper — NO fixed translateY offsets here */
   .phone-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    /* transform-origin at bottom so scale expands upward */
     transform-origin: bottom center;
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* Start fully visible & in place — reveal will handle opacity/slide-in */
   }
 
-  /* Hover: scale up slightly, expand outward from the bottom */
   .phone-wrap:hover {
     transform: scale(1.07);
   }
 
-  /* Middle card (feature card) is a bit bigger by default */
   .phone-wrap.featured {
     transform: scale(1.06);
   }
@@ -167,13 +162,32 @@
     border: 6px solid rgba(255,255,255,0.7);
     background: #fdffe6;
     position: relative;
-    /* Smooth shadow on hover */
     transition: box-shadow 0.35s ease;
   }
   .phone-wrap:hover .phone-frame {
     box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 6px 18px rgba(0,0,0,0.09);
   }
-  .phone-frame img { width: 100%; display: block; }
+
+  /* Standard phone image — fixed 400px height, cover */
+  .phone-frame img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  /* pets SVGs are slightly shorter — scale them up to fill the frame */
+  .phone-frame img.pets-img {
+    height: 400px;
+    object-fit: cover;
+    object-position: top center;
+    transform-origin: top center;
+    transform: scale(1.35) translateY(-14%);
+  }
+
+
+
   .phone-caption {
     font-family: 'Averia Libre', cursive;
     font-size: 0.85rem;
@@ -374,12 +388,6 @@
   /* ===================== END FOOTER ===================== */
 
   /* ===================== REVEAL ===================== */
-  /*
-    IMPORTANT: .reveal only controls opacity + translateY for the fade-in.
-    It must NOT fight with .phone-wrap's scale transform.
-    For phone-wrap elements we use a wrapper approach so the two transforms
-    don't cancel each other out.
-  */
   .reveal {
     opacity: 0;
     transform: translateY(28px);
@@ -393,16 +401,7 @@
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
 
-  /*
-    Phone wrappers need special treatment:
-    The .reveal class uses transform: translateY(), but .phone-wrap also uses
-    transform: scale() on hover. CSS only allows ONE transform at a time on the
-    same element, so we separate them with an outer reveal wrapper and inner
-    phone-wrap. But since the HTML nests .reveal directly on .phone-wrap, we
-    handle this by overriding: when visible, the hover scale takes over cleanly.
-  */
   .phone-wrap.reveal {
-    /* Use both transforms together when in reveal state */
     transform: translateY(28px) scale(1);
     transform-origin: bottom center;
   }
@@ -416,7 +415,6 @@
     transform: translateY(0) scale(1.06);
   }
 
-  /* Hover overrides — applied only after the card is visible */
   .phone-wrap.visible:hover {
     transform: translateY(0) scale(1.07) !important;
   }
@@ -461,32 +459,63 @@
 </section>
 
 <div class="mockup-strip">
+  <!-- Row 1: inicio, home, home(1) -->
   <div class="phone-wrap reveal">
     <div class="phone-frame">
-      <img src="images/imagesDemo/inicio.svg" alt="Pet Lynk splash screen" style="width:100%;height:400px;object-fit:cover;display:block;" />
+      <img src="images/imagesDemo/inicio.svg" alt="Pet Lynk splash screen" />
     </div>
     <span class="phone-caption">Splash</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
     <div class="phone-frame">
-      <img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" style="width:100%;height:400px;object-fit:cover;display:block;" />
+      <img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" />
     </div>
     <span class="phone-caption">Onboarding</span>
   </div>
-  <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk services list" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+  <div class="phone-wrap reveal reveal-delay-2">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/home(1).svg" alt="Pet Lynk home" />
+    </div>
+    <span class="phone-caption">Home</span>
+  </div>
+
+  <!-- Row 2: services, services(1), services(2), services(3) -->
+  <div class="phone-wrap reveal">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/services.svg" alt="Pet Lynk services" />
+    </div>
     <span class="phone-caption">Serviços</span>
   </div>
-  <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="Pet Lynk petsitting" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
-    <span class="phone-caption">Petsitting</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-3">
-    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk agendar" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+  <div class="phone-wrap reveal reveal-delay-1">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/services(1).svg" alt="Pet Lynk agendar" />
+    </div>
     <span class="phone-caption">Agendar</span>
   </div>
+  <div class="phone-wrap reveal reveal-delay-2">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/services(2).svg" alt="Pet Lynk serviços detalhe" />
+    </div>
+    <span class="phone-caption">Serviços 2</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-3">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/services(3).svg" alt="Pet Lynk serviços detalhe 2" />
+    </div>
+    <span class="phone-caption">Serviços 3</span>
+  </div>
+
+  <!-- Row 3: pets, pets(1) — scaled to match frame height -->
   <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="Pet Lynk pets" style="width:100%;height:400px;object-fit:cover;display:block;" /></div>
+    <div class="phone-frame">
+      <img src="images/imagesDemo/pets.svg" alt="Pet Lynk petsitting" class="pets-img" />
+    </div>
+    <span class="phone-caption">Petsitting</span>
+  </div>
+  <div class="phone-wrap reveal reveal-delay-1">
+    <div class="phone-frame">
+      <img src="images/imagesDemo/pets(1).svg" alt="Pet Lynk pets" class="pets-img" />
+    </div>
     <span class="phone-caption">Pets</span>
   </div>
 </div>
