@@ -67,16 +67,10 @@
     nav { padding: 0.85rem 1.25rem; }
     .nav-brand { font-size: 0.95rem; }
     .nav-logo { height: 26px; }
-    .nav-quiz {
-      padding: 0.45rem 1rem;
-      font-size: 0.75rem;
-    }
+    .nav-quiz { padding: 0.45rem 1rem; font-size: 0.75rem; }
     .nav-quiz .nav-quiz-full { display: none; }
     .nav-quiz .nav-quiz-short { display: inline; }
-    .nav-cta {
-      padding: 0.45rem 1rem;
-      font-size: 0.75rem;
-    }
+    .nav-cta { padding: 0.45rem 1rem; font-size: 0.75rem; }
     .nav-cta .nav-cta-full { display: none; }
     .nav-cta .nav-cta-short { display: inline; }
     .hero-ctas { flex-direction: column; align-items: center; }
@@ -145,81 +139,29 @@
   /* ===================== MOCKUP STRIP ===================== */
   .mockup-strip {
     padding: 4rem 2rem 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    position: relative;
-    max-width: 1400px;
-    margin: 0 auto;
+    display: flex; justify-content: center; align-items: flex-end;
+    gap: 1.5rem; flex-wrap: wrap; position: relative;
+    max-width: 1400px; margin: 0 auto;
   }
-
   .phone-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    transform-origin: bottom center;
+    display: flex; flex-direction: column; align-items: center;
+    gap: 1rem; transform-origin: bottom center;
     transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
-  .phone-wrap:hover {
-    transform: scale(1.07);
-  }
-
-  .phone-wrap.featured {
-    transform: scale(1.06);
-  }
-  .phone-wrap.featured:hover {
-    transform: scale(1.13);
-  }
-
+  .phone-wrap:hover { transform: scale(1.07); }
+  .phone-wrap.featured { transform: scale(1.06); }
+  .phone-wrap.featured:hover { transform: scale(1.13); }
   .phone-frame {
-    width: 200px;
-    border-radius: 30px;
-    overflow: hidden;
+    width: 200px; border-radius: 30px; overflow: hidden;
     box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.07);
-    border: 6px solid rgba(255,255,255,0.7);
-    background: #fdffe6;
-    position: relative;
-    transition: box-shadow 0.35s ease;
+    border: 6px solid rgba(255,255,255,0.7); background: #fdffe6;
+    position: relative; transition: box-shadow 0.35s ease;
   }
-  .phone-wrap:hover .phone-frame {
-    box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 6px 18px rgba(0,0,0,0.09);
-  }
-
-  /* Standard phone image — fixed 400px height, cover */
-  .phone-frame img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    object-position: top center;
-    display: block;
-  }
-
-  /* pets SVGs are slightly shorter — scale them up to fill the frame */
-  .phone-frame img.pets-img {
-    height: 400px;
-    object-fit: cover;
-    object-position: top center;
-    transform-origin: top center;
-    transform: scale(1.35) translateY(-14%);
-  }
-
-
-
-  .phone-caption {
-    font-family: 'Averia Libre', cursive;
-    font-size: 0.85rem;
-    color: var(--muted);
-    text-align: center;
-    transition: color 0.2s;
-  }
-  .phone-wrap:hover .phone-caption {
-    color: var(--soft-black);
-  }
-  /* ===================== END MOCKUP STRIP ===================== */
+  .phone-wrap:hover .phone-frame { box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 6px 18px rgba(0,0,0,0.09); }
+  .phone-frame img { width: 100%; height: 400px; object-fit: cover; object-position: top center; display: block; }
+  .phone-frame img.pets-img { height: 400px; object-fit: cover; object-position: top center; transform-origin: top center; transform: scale(1.35) translateY(-14%); }
+  .phone-caption { font-family: 'Averia Libre', cursive; font-size: 0.85rem; color: var(--muted); text-align: center; transition: color 0.2s; }
+  .phone-wrap:hover .phone-caption { color: var(--soft-black); }
 
   section { padding: 7rem 2rem; position: relative; }
   .section-inner { max-width: 1080px; margin: 0 auto; }
@@ -234,7 +176,6 @@
   .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; align-items: start; }
   @media (max-width: 700px) { .what-grid { grid-template-columns: 1fr; } }
   .feature-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 20px; padding: 2rem 1.75rem; backdrop-filter: blur(8px); }
-  .feature-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(120,158,110,0.14); display: flex; align-items: center; justify-content: center; object-fit: contain; margin-bottom: 1.1rem; }
   .feature-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
   .feature-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
 
@@ -249,16 +190,83 @@
   .team-name { font-family: 'Averia Libre', cursive; font-size: 1.6rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.6rem; }
   .team-bio { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
 
-  .photos-section { padding: 5rem 2rem; }
-  .photos-label { text-align: center; }
-  .photos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; max-width: 960px; margin-left: auto; margin-right: auto; }
-  .photos-grid > :nth-child(1) { grid-column: span 2; }
-  .photos-grid > :nth-child(5) { grid-column: span 2; }
-  @media (max-width: 600px) { .photos-grid { grid-template-columns: 1fr; } .photos-grid > * { grid-column: span 1 !important; } }
-  .photo-card { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; position: relative; background: var(--card-bg); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
-  .photo-card-blob { position: absolute; border-radius: 50%; filter: blur(50px); pointer-events: none; }
-  .photo-caption { font-family: 'Averia Libre', cursive; font-size: 1rem; color: var(--soft-black); opacity: 0.5; position: relative; z-index: 2; }
-  .photo-emoji { font-size: 2rem; position: relative; z-index: 2; }
+  /* ===================== PETS PHOTO MOSAIC ===================== */
+  .photos-section { padding: 5rem 2rem 6rem; }
+
+  .pets-mosaic {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 260px 260px 220px;
+    gap: 12px;
+    margin-top: 3rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Row 1: pet1 wide (2 cols), pet2, pet3 */
+  .pet-tile:nth-child(1) { grid-column: span 2; }
+  /* Row 2: pet4, pet5, pet6 wide (2 cols) */
+  .pet-tile:nth-child(6) { grid-column: span 2; }
+  /* Row 3: pet7 (2 cols), pet8 (2 cols) */
+  .pet-tile:nth-child(7) { grid-column: span 2; }
+  .pet-tile:nth-child(8) { grid-column: span 2; }
+
+  .pet-tile {
+    border-radius: 18px;
+    overflow: hidden;
+    position: relative;
+    cursor: zoom-in;
+  }
+  .pet-tile img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .pet-tile:hover img { transform: scale(1.07); }
+
+  /* Lightbox overlay */
+  .pet-lightbox {
+    display: none;
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(20,20,18,0.88);
+    backdrop-filter: blur(10px);
+    align-items: center; justify-content: center;
+    cursor: zoom-out;
+    animation: lb-in 0.25s ease;
+  }
+  .pet-lightbox.open { display: flex; }
+  @keyframes lb-in { from { opacity:0; } to { opacity:1; } }
+  .pet-lightbox img {
+    max-width: 90vw; max-height: 88vh;
+    border-radius: 20px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.5);
+    object-fit: contain;
+    animation: lb-scale 0.3s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes lb-scale { from { transform: scale(0.85); } to { transform: scale(1); } }
+  .pet-lightbox-close {
+    position: absolute; top: 1.5rem; right: 1.75rem;
+    background: rgba(255,255,230,0.15); border: none;
+    color: rgba(255,255,230,0.8); font-size: 1.4rem; line-height: 1;
+    width: 40px; height: 40px; border-radius: 50%;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s;
+  }
+  .pet-lightbox-close:hover { background: rgba(255,255,230,0.25); }
+
+  @media (max-width: 700px) {
+    .pets-mosaic {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(4, 180px) 160px;
+    }
+    .pet-tile:nth-child(1) { grid-column: span 2; }
+    .pet-tile:nth-child(6) { grid-column: span 1; }
+    .pet-tile:nth-child(7) { grid-column: span 1; }
+    .pet-tile:nth-child(8) { grid-column: span 1; }
+  }
+  /* ===================== END PETS MOSAIC ===================== */
 
   .beta-section { padding: 7rem 2rem; position: relative; overflow: hidden; }
   .beta-inner {
@@ -288,7 +296,7 @@
     width: 100%; background: var(--soft-black); color: var(--cream);
     border: none; border-radius: 100px; padding: 0.9rem 2rem;
     font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
-    cursor: pointer; transition: opacity 0.2s, transform 0.15s; position: relative; overflow: hidden;
+    cursor: pointer; transition: opacity 0.2s, transform 0.15s;
   }
   .submit-btn:hover { opacity: 0.82; }
   .submit-btn:active { transform: scale(0.99); }
@@ -299,149 +307,36 @@
   .success-msg h3 { font-family: 'Averia Libre', cursive; font-size: 1.8rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
   .success-msg p { font-size: 0.95rem; color: var(--muted); }
 
-  /* ===================== FOOTER ===================== */
-  footer {
-    padding: 5rem 2rem 3rem;
-    border-top: 0.5px solid var(--border);
-    background: rgba(200,210,185,0.08);
-  }
-  .footer-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-  .footer-cta-row {
-    text-align: center;
-    margin-bottom: 3.5rem;
-  }
-  .footer-cta-row p {
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-  .footer-cta-row h3 {
-    font-family: 'Averia Libre', cursive;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--soft-black);
-  }
-  .footer-team {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    width: 100%;
-    margin-bottom: 4rem;
-  }
-  @media (max-width: 640px) {
-    .footer-team { grid-template-columns: 1fr; }
-  }
-  .footer-member-card {
-    background: var(--card-bg);
-    border: 0.5px solid var(--border);
-    border-radius: 20px;
-    padding: 1.75rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.35rem;
-    transition: transform 0.3s ease;
-  }
+  footer { padding: 5rem 2rem 3rem; border-top: 0.5px solid var(--border); background: rgba(200,210,185,0.08); }
+  .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .footer-cta-row { text-align: center; margin-bottom: 3.5rem; }
+  .footer-cta-row p { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.5rem; }
+  .footer-cta-row h3 { font-family: 'Averia Libre', cursive; font-size: 1.35rem; font-weight: 700; color: var(--soft-black); }
+  .footer-team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; width: 100%; margin-bottom: 4rem; }
+  @media (max-width: 640px) { .footer-team { grid-template-columns: 1fr; } }
+  .footer-member-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 20px; padding: 1.75rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.35rem; transition: transform 0.3s ease; }
   .footer-member-card:hover { transform: translateY(-4px); }
-  .footer-member-role {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--moss);
-  }
-  .footer-member-name {
-    font-family: 'Averia Libre', cursive;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--soft-black);
-  }
-  .footer-member-card a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    color: var(--moss);
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: 500;
-    margin-top: 0.5rem;
-    transition: opacity 0.2s;
-  }
+  .footer-member-role { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--moss); }
+  .footer-member-name { font-family: 'Averia Libre', cursive; font-size: 1.35rem; font-weight: 700; color: var(--soft-black); }
+  .footer-member-card a { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--moss); text-decoration: none; font-size: 0.85rem; font-weight: 500; margin-top: 0.5rem; transition: opacity 0.2s; }
   .footer-member-card a:hover { opacity: 0.65; }
-  .footer-divider {
-    width: 100%;
-    height: 0.5px;
-    background: var(--border);
-    margin-bottom: 2.5rem;
-  }
-  .footer-bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    width: 100%;
-  }
+  .footer-divider { width: 100%; height: 0.5px; background: var(--border); margin-bottom: 2.5rem; }
+  .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; }
   .footer-logo { height: 52px; object-fit: contain; opacity: 0.85; }
-  .footer-brand {
-    font-family: 'Averia Libre', cursive;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--soft-black);
-    letter-spacing: -0.3px;
-  }
-  .footer-credit {
-    font-size: 0.78rem;
-    color: var(--muted);
-    text-align: center;
-    line-height: 1.6;
-  }
-  /* ===================== END FOOTER ===================== */
+  .footer-brand { font-family: 'Averia Libre', cursive; font-size: 1rem; font-weight: 700; color: var(--soft-black); letter-spacing: -0.3px; }
+  .footer-credit { font-size: 0.78rem; color: var(--muted); text-align: center; line-height: 1.6; }
 
-  /* ===================== REVEAL ===================== */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
-
-  .phone-wrap.reveal {
-    transform: translateY(28px) scale(1);
-    transform-origin: bottom center;
-  }
-  .phone-wrap.reveal.visible {
-    transform: translateY(0) scale(1);
-  }
-  .phone-wrap.reveal.featured {
-    transform: translateY(28px) scale(1);
-  }
-  .phone-wrap.reveal.featured.visible {
-    transform: translateY(0) scale(1.06);
-  }
-
-  .phone-wrap.visible:hover {
-    transform: translateY(0) scale(1.07) !important;
-  }
-  .phone-wrap.featured.visible:hover {
-    transform: translateY(0) scale(1.13) !important;
-  }
+  .phone-wrap.reveal { transform: translateY(28px) scale(1); transform-origin: bottom center; }
+  .phone-wrap.reveal.visible { transform: translateY(0) scale(1); }
+  .phone-wrap.reveal.featured { transform: translateY(28px) scale(1); }
+  .phone-wrap.reveal.featured.visible { transform: translateY(0) scale(1.06); }
+  .phone-wrap.visible:hover { transform: translateY(0) scale(1.07) !important; }
+  .phone-wrap.featured.visible:hover { transform: translateY(0) scale(1.13) !important; }
 </style>
 </head>
 <body>
@@ -480,63 +375,40 @@
 </section>
 
 <div class="mockup-strip">
-  <!-- Row 1: inicio, home, home(1) -->
   <div class="phone-wrap reveal">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/inicio.svg" alt="Pet Lynk splash screen" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/inicio.svg" alt="Pet Lynk splash screen" /></div>
     <span class="phone-caption">Splash</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" /></div>
     <span class="phone-caption">Home 1</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/home(1).svg" alt="Pet Lynk home" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/home(1).svg" alt="Pet Lynk home" /></div>
     <span class="phone-caption">Home 2</span>
   </div>
-
-  <!-- Row 2: services, services(1), services(2), services(3) -->
   <div class="phone-wrap reveal">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/services.svg" alt="Pet Lynk services" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk services" /></div>
     <span class="phone-caption">Serviços</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/services(1).svg" alt="Pet Lynk agendar" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/services(1).svg" alt="Pet Lynk agendar" /></div>
     <span class="phone-caption">Agendar</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/services(2).svg" alt="Pet Lynk serviços detalhe" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/services(2).svg" alt="Pet Lynk serviços detalhe" /></div>
     <span class="phone-caption">Serviços 2</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-3">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/services(3).svg" alt="Pet Lynk serviços detalhe 2" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/services(3).svg" alt="Pet Lynk serviços detalhe 2" /></div>
     <span class="phone-caption">Serviços 3</span>
   </div>
-
-  <!-- Row 3: pets, pets(1) — scaled to match frame height -->
   <div class="phone-wrap reveal">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/pets.svg" alt="Pet Lynk petsitting" class="pets-img" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="Pet Lynk petsitting" class="pets-img" /></div>
     <span class="phone-caption">Pet 1</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame">
-      <img src="images/imagesDemo/pets(1).svg" alt="Pet Lynk pets" class="pets-img" />
-    </div>
+    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="Pet Lynk pets" class="pets-img" /></div>
     <span class="phone-caption">Pet 2</span>
   </div>
 </div>
@@ -564,7 +436,6 @@
         <p>Guarda consultas, vacinas e medicamentos num só lugar. Nunca mais perdes nenhum registo importante.</p>
       </div>
     </div>
-
     <div class="reveal" style="margin-top: 4rem;">
       <div class="quiz-banner">
         <div class="quiz-banner-emoji">✨</div>
@@ -616,45 +487,61 @@
   </div>
 </section>
 
+<!-- ===================== BASTIDORES — PETS MOSAIC ===================== -->
 <section class="photos-section">
   <div style="max-width:1080px;margin:0 auto;">
-    <p class="section-label reveal photos-label">Bastidores</p>
+    <p class="section-label reveal" style="text-align:center;">Bastidores</p>
     <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Os nossos <em>soulmates</em></h2>
-    <div class="photos-grid">
-      <div class="photo-card reveal" style="background:linear-gradient(135deg,#e8d4f0,#c5c3e0);">
-        <div class="photo-card-blob" style="width:200px;height:200px;background:#b8a8d8;top:-40px;left:-40px;"></div>
-        <span class="photo-emoji">🐕</span><span class="photo-caption">Flora, a nossa mascote</span>
+
+    <div class="pets-mosaic">
+      <!-- Row 1 -->
+      <div class="pet-tile reveal">
+        <img src="images/ImagesPets/pet.jpeg" alt="Pet 1" loading="lazy" />
+        
       </div>
-      <div class="photo-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#d4f0d8,#b8cba0);">
-        <div class="photo-card-blob" style="width:180px;height:180px;background:#a8d0a8;bottom:-30px;right:-30px;"></div>
-        <span class="photo-emoji">🐈</span><span class="photo-caption">Boris, o gato do Diogo</span>
+      <div class="pet-tile reveal reveal-delay-1">
+        <img src="images/ImagesPets/pet2.jpeg" alt="Pet 2" loading="lazy" />
+        
       </div>
-      <div class="photo-card reveal reveal-delay-2" style="background:linear-gradient(135deg,#fdf0d0,#f0d8a0);">
-        <div class="photo-card-blob" style="width:160px;height:160px;background:#e8d088;top:-20px;right:-20px;"></div>
-        <span class="photo-emoji">🐾</span><span class="photo-caption">Primeiros wireframes</span>
+      <div class="pet-tile reveal reveal-delay-2">
+        <img src="images/ImagesPets/pet3.jpeg" alt="Pet 3" loading="lazy" />
+        
       </div>
-      <div class="photo-card reveal" style="background:linear-gradient(135deg,#fdffe6,#d4e8b0);">
-        <div class="photo-card-blob" style="width:180px;height:180px;background:#b8cba0;bottom:-20px;left:-20px;"></div>
-        <span class="photo-emoji">💻</span><span class="photo-caption">A equipa em modo dev</span>
+      <!-- Row 2 -->
+      <div class="pet-tile reveal">
+        <img src="images/ImagesPets/pet4.jpeg" alt="Pet 4" loading="lazy" />
+        
       </div>
-      <div class="photo-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#fbe8e8,#f0c8c8);">
-        <div class="photo-card-blob" style="width:200px;height:200px;background:#e8a8a8;top:-30px;right:-30px;"></div>
-        <span class="photo-emoji">🎨</span><span class="photo-caption">Design sessions com a Bia</span>
+      <div class="pet-tile reveal reveal-delay-1">
+        <img src="images/ImagesPets/pet5.jpeg" alt="Pet 5" loading="lazy" />
+        
+      </div>
+      <div class="pet-tile reveal reveal-delay-2">
+        <img src="images/ImagesPets/pet6.jpeg" alt="Pet 6" loading="lazy" />
+        
+      </div>
+      <!-- Row 3 -->
+      <div class="pet-tile reveal">
+        <img src="images/ImagesPets/pet7.jpeg" alt="Pet 7" loading="lazy" />
+        
+      </div>
+      <div class="pet-tile reveal reveal-delay-1">
+        <img src="images/ImagesPets/pet8.jpeg" alt="Pet 8" loading="lazy" />
+        
       </div>
     </div>
   </div>
 </section>
+<!-- ===================== END BASTIDORES ===================== -->
 
 <section class="beta-section" id="beta">
   <div class="blob blob-1" style="opacity:0.3;width:400px;height:400px;"></div>
   <div class="blob blob-2" style="opacity:0.25;width:350px;height:350px;"></div>
-
   <div class="beta-inner reveal">
     <div id="form-content">
       <p class="section-label">Beta Aberto</p>
       <h2 class="section-title">Preenche o formulário para usar</h2>
       <p class="section-body">Estamos a aceitar utilizadores para experimentar a Pet Lynk. Entra agora no Beta e ajuda-nos a criar a melhor app para os teus patudos.</p>
-
       <div style="margin-top:2rem;">
         <input type="hidden" id="access_key" value="9e8023e6-c581-43b7-9765-016d23d049d7" />
         <div class="form-row-inline">
@@ -722,7 +609,6 @@
         <p class="form-note">Sem spam. Prometemos. 🤞</p>
       </div>
     </div>
-
     <div class="success-msg" id="success-msg">
       <div class="success-emoji">🎉</div>
       <h3>Estás na lista!</h3>
@@ -762,6 +648,29 @@
     </div>
   </div>
 </footer>
+
+<!-- Lightbox -->
+<div class="pet-lightbox" id="petLightbox">
+  <button class="pet-lightbox-close" id="petLightboxClose">✕</button>
+  <img id="petLightboxImg" src="" alt="" />
+</div>
+
+<script>
+  const lightbox = document.getElementById('petLightbox');
+  const lbImg    = document.getElementById('petLightboxImg');
+  document.querySelectorAll('.pet-tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      lbImg.src = tile.querySelector('img').src;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('petLightboxClose').addEventListener('click', e => {
+    e.stopPropagation();
+    lightbox.classList.remove('open');
+  });
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+</script>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
