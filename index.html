@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pet Lynk — a place for true soulmates</title>
+<title>Pet Lynk — o lugar para almas gémeas patudas</title>
 <link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
@@ -46,15 +46,6 @@
     color: var(--soft-black); letter-spacing: -0.5px;
   }
   .nav-right { display: flex; align-items: center; gap: 0.75rem; }
-  .nav-quiz {
-    background: rgba(120,158,110,0.12);
-    border: 0.5px solid rgba(120,158,110,0.35);
-    color: var(--moss);
-    padding: 0.5rem 1.1rem; border-radius: 100px;
-    font-size: 0.82rem; font-weight: 500;
-    text-decoration: none; transition: all 0.2s;
-  }
-  .nav-quiz:hover { background: rgba(120,158,110,0.2); }
   .nav-cta {
     background: var(--soft-black); color: var(--cream);
     padding: 0.55rem 1.4rem; border-radius: 100px;
@@ -67,16 +58,13 @@
     nav { padding: 0.85rem 1.25rem; }
     .nav-brand { font-size: 0.95rem; }
     .nav-logo { height: 26px; }
-    .nav-quiz { padding: 0.45rem 1rem; font-size: 0.75rem; }
-    .nav-quiz .nav-quiz-full { display: none; }
-    .nav-quiz .nav-quiz-short { display: inline; }
     .nav-cta { padding: 0.45rem 1rem; font-size: 0.75rem; }
     .nav-cta .nav-cta-full { display: none; }
     .nav-cta .nav-cta-short { display: inline; }
     .hero-ctas { flex-direction: column; align-items: center; }
-    .hero-pill, .hero-quiz-pill { justify-content: center; width: 100%; max-width: 280px; }
+    .hero-pill { justify-content: center; width: 100%; max-width: 280px; }
   }
-  .nav-quiz-short, .nav-cta-short { display: none; }
+  .nav-cta-short { display: none; }
 
   .hero {
     min-height: 100vh;
@@ -108,33 +96,7 @@
     font-size: 0.88rem; color: var(--moss); font-weight: 500; text-decoration: none;
   }
   .hero-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--moss); display: inline-block; animation: pulse 2s ease-in-out infinite; }
-  .hero-quiz-pill {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(197,195,224,0.25); border: 0.5px solid rgba(124,111,212,0.3);
-    border-radius: 100px; padding: 0.6rem 1.2rem;
-    font-size: 0.88rem; color: #534ab7; font-weight: 500; text-decoration: none; transition: all 0.2s;
-  }
-  .hero-quiz-pill:hover { background: rgba(197,195,224,0.4); }
   @keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:0.3 } }
-
-  .quiz-banner {
-    background: linear-gradient(135deg, rgba(197,195,224,0.3) 0%, rgba(184,203,160,0.3) 100%);
-    border: 0.5px solid rgba(124,111,212,0.2); border-radius: 24px;
-    padding: 2.5rem 2rem; text-align: center; max-width: 680px; margin: 0 auto;
-  }
-  .quiz-banner-emoji { font-size: 2.5rem; margin-bottom: 0.75rem; }
-  .quiz-banner h3 { font-family: 'Averia Libre', cursive; font-size: 1.5rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
-  .quiz-banner p { font-size: 0.93rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
-  .quiz-banner-profiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; margin-bottom: 1.5rem; }
-  .quiz-banner-tag { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 100px; padding: 0.3rem 0.8rem; font-size: 0.78rem; color: var(--soft-black); }
-  .quiz-banner-btn {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--soft-black); color: var(--cream);
-    border-radius: 100px; padding: 0.75rem 1.75rem;
-    font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 500;
-    text-decoration: none; transition: opacity 0.2s, transform 0.15s;
-  }
-  .quiz-banner-btn:hover { opacity: 0.8; transform: translateY(-1px); }
 
   /* ===================== MOCKUP STRIP ===================== */
   .mockup-strip {
@@ -347,8 +309,7 @@
     <span class="nav-brand">Pet Lynk</span>
   </div>
   <div class="nav-right">
-    <a href="quiz.html" class="nav-quiz"><span class="nav-quiz-full">✨ Descobre a tua aura</span><span class="nav-quiz-short">✨ Quiz</span></a>
-    <a href="#beta" class="nav-cta"><span class="nav-cta-full">Preenche o form</span><span class="nav-cta-short">Form</span></a>
+    <a href="#beta" class="nav-cta"><span class="nav-cta-full">Preenche o formulário</span><span class="nav-cta-short">Entrar</span></a>
   </div>
 </nav>
 
@@ -356,9 +317,9 @@
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
-  <p class="hero-eyebrow reveal">Beta Aberto</p>
+  <p class="hero-eyebrow reveal">Teste beta aberto</p>
   <h1 class="reveal reveal-delay-1">
-    A app para as tuas<br/><em>almas gémeas</em> patudas
+    A aplicação para as tuas<br/><em>almas gémeas</em> patudas
   </h1>
   <p class="hero-sub reveal reveal-delay-2">
     Serviços de cuidado, agendamentos e acompanhamento para os teus animais — tudo num só lugar.
@@ -366,66 +327,63 @@
   <div class="hero-ctas reveal reveal-delay-3">
     <a href="#beta" class="hero-pill">
       <span></span>
-      Preenche o form para usar
-    </a>
-    <a href="quiz.html" class="hero-quiz-pill">
-      ✨ Descobre a tua aura
+      Preenche o formulário para entrar
     </a>
   </div>
 </section>
 
 <div class="mockup-strip">
   <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/inicio.svg" alt="Pet Lynk splash screen" /></div>
-    <span class="phone-caption">Splash</span>
+    <div class="phone-frame"><img src="images/imagesDemo/inicio.svg" alt="Ecrã inicial da Pet Lynk" /></div>
+    <span class="phone-caption">Ecrã inicial</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/home.svg" alt="Pet Lynk onboarding" /></div>
-    <span class="phone-caption">Home 1</span>
+    <div class="phone-frame"><img src="images/imagesDemo/home.svg" alt="Boas-vindas da Pet Lynk" /></div>
+    <span class="phone-caption">Início 1</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame"><img src="images/imagesDemo/home(1).svg" alt="Pet Lynk home" /></div>
-    <span class="phone-caption">Home 2</span>
+    <div class="phone-frame"><img src="images/imagesDemo/home(1).svg" alt="Página inicial da Pet Lynk" /></div>
+    <span class="phone-caption">Início 2</span>
   </div>
   <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Pet Lynk services" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Serviços da Pet Lynk" /></div>
     <span class="phone-caption">Serviços</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/services(1).svg" alt="Pet Lynk agendar" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/services(1).svg" alt="Agendamento na Pet Lynk" /></div>
     <span class="phone-caption">Agendar</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame"><img src="images/imagesDemo/services(2).svg" alt="Pet Lynk serviços detalhe" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/services(2).svg" alt="Detalhe de serviços da Pet Lynk" /></div>
     <span class="phone-caption">Serviços 2</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-3">
-    <div class="phone-frame"><img src="images/imagesDemo/services(3).svg" alt="Pet Lynk serviços detalhe 2" /></div>
+    <div class="phone-frame"><img src="images/imagesDemo/services(3).svg" alt="Outro detalhe de serviços da Pet Lynk" /></div>
     <span class="phone-caption">Serviços 3</span>
   </div>
   <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="Pet Lynk petsitting" class="pets-img" /></div>
-    <span class="phone-caption">Pet 1</span>
+    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="Cuidados de animais na Pet Lynk" class="pets-img" /></div>
+    <span class="phone-caption">Animal 1</span>
   </div>
   <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="Pet Lynk pets" class="pets-img" /></div>
-    <span class="phone-caption">Pet 2</span>
+    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="Animais na Pet Lynk" class="pets-img" /></div>
+    <span class="phone-caption">Animal 2</span>
   </div>
 </div>
 
 <section>
   <div class="section-inner">
     <p class="section-label reveal">O que é</p>
-    <h2 class="section-title reveal reveal-delay-1">Uma app feita com <em>amor</em><br/>para quem ama os seus pets</h2>
-    <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, do grooming à medicação. Com Pet Lynk, tens tudo organizado.</p>
+    <h2 class="section-title reveal reveal-delay-1">Uma aplicação feita com <em>amor</em><br/>para quem ama os seus animais</h2>
+    <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, da tosquia à medicação. Com Pet Lynk, tens tudo organizado.</p>
     <div class="what-grid">
       <div class="feature-card reveal">
-        <h3>Perfil do teu pet</h3>
+        <h3>Perfil do teu animal</h3>
         <p>Regista tudo sobre o teu animal: raça, peso, idade, vacinas, relatórios médicos e muito mais.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
         <h3>Cuidadores perto de ti</h3>
-        <p>Encontra petsitters, groomers e dog walkers na tua zona com avaliações reais e preços transparentes.</p>
+        <p>Encontra cuidadores, tratadores e passeadores de cães na tua zona com avaliações reais e preços transparentes.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
         <h3>Agendamento fácil</h3>
@@ -436,33 +394,19 @@
         <p>Guarda consultas, vacinas e medicamentos num só lugar. Nunca mais perdes nenhum registo importante.</p>
       </div>
     </div>
-    <div class="reveal" style="margin-top: 4rem;">
-      <div class="quiz-banner">
-        <div class="quiz-banner-emoji">✨</div>
-        <h3>Descobre a Aura do teu animal</h3>
-        <p>4 perguntas rápidas para descobrir que tipo de tutor és — e qual funcionalidade da Pet Lynk foi feita para ti.</p>
-        <div class="quiz-banner-profiles">
-          <span class="quiz-banner-tag">🛡️ Tutor Protetor</span>
-          <span class="quiz-banner-tag">🏥 Tutor Cuidador</span>
-          <span class="quiz-banner-tag">🌍 Tutor Explorador</span>
-          <span class="quiz-banner-tag">📋 Tutor Organizado</span>
-        </div>
-        <a href="quiz.html" class="quiz-banner-btn">Fazer o quiz →</a>
-      </div>
-    </div>
   </div>
 </section>
 
 <section class="team-section">
   <div class="section-inner">
     <p class="section-label reveal">Quem somos</p>
-    <h2 class="section-title reveal reveal-delay-1">Feito por pessoas que<br/><em>também têm pets</em></h2>
+    <h2 class="section-title reveal reveal-delay-1">Feito por pessoas que<br/><em>também têm animais</em></h2>
     <p class="section-body reveal reveal-delay-2">Somos três amigos do Porto com uma missão: tornar a vida dos donos de animais muito mais fácil e organizada.</p>
     <div class="team-grid">
       <div class="team-card reveal">
         <div class="team-avatar" style="background: linear-gradient(135deg, #e8d4f0 0%, #c5c3e0 100%); background-image: url('images/imagesFounders/founder2.jpg'); background-size: cover; background-position: center;"></div>
         <div class="team-info">
-          <p class="team-role">CEO & Co-founder</p>
+          <p class="team-role">Diretora executiva e cofundadora</p>
           <h3 class="team-name">Rita</h3>
           <p class="team-bio">A mente por trás da visão. Rita combina experiência em gestão de produto com uma paixão genuína por animais. É ela que define para onde o Pet Lynk vai — e a que ritmo chega lá.</p>
         </div>
@@ -470,17 +414,17 @@
       <div class="team-card reveal reveal-delay-1">
         <div class="team-avatar" style="background: linear-gradient(135deg, #d4f0d8 0%, #b8cba0 100%); background-image: url('images/imagesFounders/whatsapp-contact.jpg'); background-size: cover; background-position: center;"></div>
         <div class="team-info">
-          <p class="team-role">Designer & Co-founder</p>
+          <p class="team-role">Design e cofundadora</p>
           <h3 class="team-name">Bia</h3>
-          <p class="team-bio">Responsável por tudo o que és capaz de ver e sentir no Pet Lynk. Bia transforma ideias complexas em interfaces limpas, intuitivas e com aquele toque especial que nos distingue.</p>
+          <p class="team-bio">Responsável por tudo o que és capaz de ver e sentir no Pet Lynk. Bia transforma ideias complexas em ecrãs limpos, intuitivos e com aquele toque especial que nos distingue.</p>
         </div>
       </div>
       <div class="team-card reveal reveal-delay-2">
         <div class="team-avatar" style="background: linear-gradient(135deg, #fdf0d0 0%, #f0d8a0 100%); background-image: url('images/imagesFounders/founder1.jpg'); background-size: cover; background-position: center;"></div>
         <div class="team-info">
-          <p class="team-role">Developer & Co-founder</p>
+          <p class="team-role">Programador e cofundador</p>
           <h3 class="team-name">Diogo</h3>
-          <p class="team-bio">O arquitecto técnico do Pet Lynk. Diogo transforma designs e ideias em código robusto, rápido e fiável. É ele que faz a magia acontecer — linha a linha, commit a commit.</p>
+          <p class="team-bio">O arquiteto técnico do Pet Lynk. Diogo transforma protótipos e ideias em código robusto, rápido e fiável. É ele que faz a magia acontecer — linha a linha, versão a versão.</p>
         </div>
       </div>
     </div>
@@ -491,42 +435,42 @@
 <section class="photos-section">
   <div style="max-width:1080px;margin:0 auto;">
     <p class="section-label reveal" style="text-align:center;">Bastidores</p>
-    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Os nossos <em>soulmates</em></h2>
+    <h2 class="section-title reveal reveal-delay-1" style="text-align:center;">Os nossos <em>companheiros</em></h2>
 
     <div class="pets-mosaic">
       <!-- Row 1 -->
       <div class="pet-tile reveal">
-        <img src="images/ImagesPets/pet.jpeg" alt="Pet 1" loading="lazy" />
+        <img src="images/ImagesPets/pet.jpeg" alt="Animal 1" loading="lazy" />
         
       </div>
       <div class="pet-tile reveal reveal-delay-1">
-        <img src="images/ImagesPets/pet2.jpeg" alt="Pet 2" loading="lazy" />
+        <img src="images/ImagesPets/pet2.jpeg" alt="Animal 2" loading="lazy" />
         
       </div>
       <div class="pet-tile reveal reveal-delay-2">
-        <img src="images/ImagesPets/pet3.jpeg" alt="Pet 3" loading="lazy" />
+        <img src="images/ImagesPets/pet3.jpeg" alt="Animal 3" loading="lazy" />
         
       </div>
       <!-- Row 2 -->
       <div class="pet-tile reveal">
-        <img src="images/ImagesPets/pet4.jpeg" alt="Pet 4" loading="lazy" />
+        <img src="images/ImagesPets/pet4.jpeg" alt="Animal 4" loading="lazy" />
         
       </div>
       <div class="pet-tile reveal reveal-delay-1">
-        <img src="images/ImagesPets/pet5.jpeg" alt="Pet 5" loading="lazy" />
+        <img src="images/ImagesPets/pet5.jpeg" alt="Animal 5" loading="lazy" />
         
       </div>
       <div class="pet-tile reveal reveal-delay-2">
-        <img src="images/ImagesPets/pet6.jpeg" alt="Pet 6" loading="lazy" />
+        <img src="images/ImagesPets/pet6.jpeg" alt="Animal 6" loading="lazy" />
         
       </div>
       <!-- Row 3 -->
       <div class="pet-tile reveal">
-        <img src="images/ImagesPets/pet7.jpeg" alt="Pet 7" loading="lazy" />
+        <img src="images/ImagesPets/pet7.jpeg" alt="Animal 7" loading="lazy" />
         
       </div>
       <div class="pet-tile reveal reveal-delay-1">
-        <img src="images/ImagesPets/pet8.jpeg" alt="Pet 8" loading="lazy" />
+        <img src="images/ImagesPets/pet8.jpeg" alt="Animal 8" loading="lazy" />
         
       </div>
     </div>
@@ -539,9 +483,9 @@
   <div class="blob blob-2" style="opacity:0.25;width:350px;height:350px;"></div>
   <div class="beta-inner reveal">
     <div id="form-content">
-      <p class="section-label">Beta Aberto</p>
-      <h2 class="section-title">Preenche o formulário para usar</h2>
-      <p class="section-body">Estamos a aceitar utilizadores para experimentar a Pet Lynk. Entra agora no Beta e ajuda-nos a criar a melhor app para os teus patudos.</p>
+      <p class="section-label">Teste beta aberto</p>
+      <h2 class="section-title">Preenche o formulário para entrar</h2>
+      <p class="section-body">Estamos a aceitar utilizadores para experimentar a Pet Lynk. Entra agora no teste beta e ajuda-nos a criar a melhor aplicação para os teus patudos.</p>
       <div style="margin-top:2rem;">
         <input type="hidden" id="access_key" value="9e8023e6-c581-43b7-9765-016d23d049d7" />
         <div class="form-row-inline">
@@ -550,8 +494,8 @@
             <input type="text" id="name" placeholder="O teu nome" required />
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="tu@email.com" required />
+            <label for="email">Correio eletrónico</label>
+            <input type="email" id="email" placeholder="nome@exemplo.pt" required />
           </div>
         </div>
         <div class="form-row-inline">
@@ -566,11 +510,11 @@
         </div>
         <div class="form-row-inline">
           <div class="form-group">
-            <label for="pets">Quantos pets tens?</label>
+            <label for="pets">Quantos animais tens?</label>
             <select id="pets">
-              <option value="">Selecciona…</option>
-              <option value="1">1 pet</option>
-              <option value="2">2 pets</option>
+              <option value="">Seleciona…</option>
+              <option value="1">1 animal</option>
+              <option value="2">2 animais</option>
               <option value="3">3 ou mais</option>
             </select>
           </div>
@@ -578,7 +522,7 @@
         <div class="form-group">
           <label for="pettype">Tipo de animal</label>
           <select id="pettype">
-            <option value="">Selecciona…</option>
+            <option value="">Seleciona…</option>
             <option value="cao">Cão 🐕</option>
             <option value="gato">Gato 🐈</option>
             <option value="ambos">Cão e Gato 🐾</option>
@@ -586,10 +530,10 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="role">Quero usar a app como…</label>
+          <label for="role">Quero usar a aplicação como…</label>
           <select id="role">
-            <option value="">Selecciona…</option>
-            <option value="dono">Dono de pet</option>
+            <option value="">Seleciona…</option>
+            <option value="dono">Tutor de animal</option>
             <option value="cuidador">Prestador de serviços</option>
             <option value="empresa">Empresa</option>
             <option value="ambos">Ambos</option>
@@ -597,16 +541,16 @@
         </div>
         <div class="form-group">
           <label for="why">Porquê o Pet Lynk? (opcional)</label>
-          <textarea id="why" rows="3" placeholder="Conta-nos o que mais te interessa na app…"></textarea>
+          <textarea id="why" rows="3" placeholder="Conta-nos o que mais te interessa na aplicação…"></textarea>
         </div>
         <div class="checkbox-group">
           <input type="checkbox" id="agree" />
           <label for="agree">Aceito receber novidades sobre o Pet Lynk e percebo que os meus dados são usados apenas para este fim.</label>
         </div>
         <button class="submit-btn" id="submit-btn" onclick="submitForm()">
-          Quero entrar no Beta 🐾
+          Quero entrar no teste 🐾
         </button>
-        <p class="form-note">Sem spam. Prometemos. 🤞</p>
+        <p class="form-note">Sem mensagens indesejadas. Prometemos. 🤞</p>
       </div>
     </div>
     <div class="success-msg" id="success-msg">
@@ -625,17 +569,17 @@
     </div>
     <div class="footer-team">
       <div class="footer-member-card">
-        <span class="footer-member-role">Designer & Product Lead</span>
+        <span class="footer-member-role">Design e produto</span>
         <span class="footer-member-name">Rita</span>
         <a href="https://www.linkedin.com/in/rita-sousa-92993b2b2/" target="_blank">LinkedIn →</a>
       </div>
       <div class="footer-member-card">
-        <span class="footer-member-role">Product & Growth</span>
+        <span class="footer-member-role">Produto e crescimento</span>
         <span class="footer-member-name">Bea</span>
         <a href="https://www.linkedin.com/in/b-marques-965627305/" target="_blank">LinkedIn →</a>
       </div>
       <div class="footer-member-card">
-        <span class="footer-member-role">Tech & Development</span>
+        <span class="footer-member-role">Tecnologia e desenvolvimento</span>
         <span class="footer-member-name">Diogo</span>
         <a href="https://www.linkedin.com/in/diogo-teixeira-9b108423b/" target="_blank">LinkedIn →</a>
       </div>
@@ -689,7 +633,7 @@
     const why     = document.getElementById('why').value.trim();
     const agree   = document.getElementById('agree').checked;
 
-    if (!name || !email || !phone) { alert('Por favor preenche o nome, email e número de telemóvel.'); return; }
+    if (!name || !email || !phone) { alert('Por favor preenche o nome, correio eletrónico e número de telemóvel.'); return; }
     if (!agree) { alert('Por favor aceita os termos para continuar.'); return; }
 
     const btn = document.getElementById('submit-btn');
@@ -698,11 +642,11 @@
 
     const payload = {
       access_key: document.getElementById('access_key').value,
-      subject: '🐾 Nova candidatura ao Beta — Pet Lynk',
+      subject: '🐾 Nova candidatura ao teste beta — Pet Lynk',
       name, email,
       telemovel: phone,
       cidade: city || '—',
-      numero_de_pets: pets || '—',
+      numero_de_animais: pets || '—',
       tipo_de_animal: pettype || '—',
       perfil: role || '—',
       mensagem: why || '—',
@@ -725,9 +669,9 @@
         throw new Error(data.message || 'Envio falhou');
       }
     } catch (err) {
-      alert('Ocorreu um erro ao enviar. Tenta novamente ou contacta-nos directamente.');
+      alert('Ocorreu um erro ao enviar. Tenta novamente ou contacta-nos diretamente.');
       btn.disabled = false;
-      btn.textContent = 'Quero entrar no Beta 🐾';
+      btn.textContent = 'Quero entrar no teste 🐾';
     }
   }
 </script>
