@@ -1,0 +1,618 @@
+/* ── Shell ─────────────────────────────────────────────────────────── */
+
+.shell {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--app-bg);
+  overflow: hidden;
+}
+
+/* Blobs desfocados — assinatura visual do handoff. Não se movem nem reagem ao scroll. */
+.shell-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+.shell-blob.lavender {
+  width: 400px;
+  height: 400px;
+  background: var(--lavender);
+  opacity: 0.5;
+  top: -120px;
+  left: -140px;
+}
+.shell-blob.sage {
+  width: 360px;
+  height: 360px;
+  background: var(--sage);
+  opacity: 0.45;
+  bottom: -60px;
+  right: -120px;
+}
+.shell-blob.sand {
+  width: 280px;
+  height: 280px;
+  background: var(--sand);
+  opacity: 0.4;
+  top: 38%;
+  left: 40%;
+}
+
+.shell-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.3;
+  mix-blend-mode: multiply;
+  z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+}
+
+/* Coluna central: ecrã inteiro em telemóvel, largura máxima em desktop.
+   Nada muda de estrutura — os cartões apenas esticam (handoff, "Responsivo"). */
+.shell-column {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  width: 100%;
+  max-width: var(--app-max-w);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.shell-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-top: 6px;
+}
+.shell-scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+.screen {
+  padding: 0 var(--gutter) 32px;
+}
+.screen.wide-gutter {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.screen.full-height {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Transição de empurrar horizontal, ~260ms (handoff) */
+@keyframes push-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.screen-anim {
+  animation: push-in 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .screen-anim {
+    animation: none;
+  }
+}
+
+/* ── Barra de estado (maqueta do design) ───────────────────────────── */
+
+.statusbar {
+  position: relative;
+  z-index: 3;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px 0 26px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  flex: none;
+}
+
+/* ── Barra de separadores ──────────────────────────────────────────── */
+
+.tabbar {
+  position: relative;
+  z-index: 3;
+  flex: none;
+  height: calc(var(--tabbar-h) + env(safe-area-inset-bottom, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--tabbar);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 0.5px solid var(--tabbar-border);
+}
+.tabbar.caregiver {
+  background: var(--cg-tabbar);
+  border-top-color: var(--cg-tabbar-border);
+}
+.tabbar-item {
+  position: relative;
+  width: 52px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+}
+.tabbar-dot {
+  position: absolute;
+  top: 9px;
+  right: 11px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 1.5px solid var(--app-bg);
+}
+.tabbar.caregiver .tabbar-dot {
+  border-color: #f0eef4;
+}
+
+/* ── Cartão ────────────────────────────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 0.5px solid var(--border-card);
+  border-radius: var(--r-lg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 16px;
+}
+.card.dark {
+  background: var(--text);
+  color: var(--app-bg);
+  border-color: transparent;
+}
+.card.tight {
+  padding: 12px;
+}
+.card.flush {
+  padding: 0;
+}
+.card.moss {
+  background: var(--fill-moss);
+  border-color: var(--fill-moss-border);
+}
+.card.terracotta {
+  background: var(--fill-terracotta);
+  border-color: var(--fill-terracotta-border);
+}
+.card.lavender {
+  background: var(--fill-lavender);
+  border-color: var(--fill-lavender-border);
+}
+.card.outline-terracotta {
+  border: 1.5px solid var(--fill-terracotta-border);
+}
+.card.outline-moss {
+  border: 1.5px solid var(--moss);
+}
+.card.md {
+  border-radius: var(--r-md);
+}
+.card.sm {
+  border-radius: var(--r-sm);
+}
+.card.xl {
+  border-radius: var(--r-xl);
+}
+.card.dashed {
+  background: none;
+  border: 0.5px dashed var(--border-dashed);
+  backdrop-filter: none;
+}
+
+.rule {
+  height: 0;
+  border-top: 0.5px solid var(--rule);
+  margin: 14px 0;
+}
+.card.dark .rule {
+  border-top-color: rgba(253, 255, 230, 0.18);
+}
+
+/* ── Botões ────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: var(--r-pill);
+  font-size: 16px;
+  font-weight: 500;
+  min-height: 52px;
+  padding: 0 22px;
+  transition: background 120ms ease, opacity 120ms ease;
+}
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.btn.block {
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--text);
+  color: var(--app-bg);
+}
+.btn-primary:not(:disabled):active {
+  background: var(--pressed);
+}
+
+.btn-moss {
+  background: var(--moss);
+  color: #fdffe6;
+}
+.btn-moss:not(:disabled):active {
+  background: var(--moss-dark);
+}
+
+.btn-cream {
+  background: var(--app-bg);
+  color: var(--text);
+}
+
+.btn-secondary {
+  min-height: 48px;
+  background: var(--card-strong);
+  border: 0.5px solid var(--border-card);
+  color: var(--text);
+  font-size: 14.5px;
+}
+.btn-secondary:not(:disabled):active {
+  background: rgba(240, 240, 225, 0.95);
+}
+
+.btn-ghost {
+  min-height: 44px;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 0;
+  border-radius: var(--r-pill);
+  background: var(--card-soft);
+  border: 0.5px solid var(--border-card);
+  position: relative;
+}
+.btn-icon.sm {
+  width: 40px;
+  height: 40px;
+  min-height: 40px;
+}
+.btn-icon.dark {
+  background: var(--text);
+  border-color: transparent;
+}
+
+.btn-dot {
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--terracotta);
+  border: 1.5px solid var(--app-bg);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 900ms linear infinite;
+}
+
+/* Círculo de sucesso do ecrã 09: entra com escala 0.9→1 em 220ms (handoff). */
+@keyframes pop-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pop-in {
+  animation: pop-in 220ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .spin,
+  .pop-in {
+    animation: none;
+  }
+}
+
+/* ── Pílulas e selos ───────────────────────────────────────────────── */
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: var(--r-pill);
+  padding: 5px 11px;
+  font-size: 11px;
+  font-weight: 500;
+  border: 0.5px solid transparent;
+  white-space: nowrap;
+}
+.pill.moss {
+  background: var(--fill-moss);
+  border-color: var(--fill-moss-border);
+  color: var(--moss-dark);
+}
+.pill.terracotta {
+  background: var(--fill-terracotta);
+  border-color: var(--fill-terracotta-border);
+  color: var(--terracotta-dark);
+}
+.pill.lavender {
+  background: var(--fill-lavender);
+  border-color: var(--fill-lavender-border);
+  color: var(--lavender-dark);
+}
+.pill.neutral {
+  background: var(--card-strong);
+  border-color: var(--border-card);
+  color: var(--text-2);
+}
+.pill.dark {
+  background: var(--text);
+  color: var(--app-bg);
+}
+.pill.lg {
+  padding: 7px 14px;
+  font-size: 12.5px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+
+/* Chips com scroll horizontal (serviços, filtros) */
+.chip {
+  border-radius: var(--r-pill);
+  padding: 9px 16px;
+  font-size: 13px;
+  background: var(--card-strong);
+  border: 0.5px solid var(--border-card);
+  color: var(--text-2);
+  min-height: 40px;
+  white-space: nowrap;
+}
+.chip.active {
+  background: var(--text);
+  border-color: transparent;
+  color: var(--app-bg);
+  font-weight: 500;
+}
+
+/* ── Avatar e fotografia ───────────────────────────────────────────── */
+
+.avatar {
+  border-radius: var(--r-pill);
+  object-fit: cover;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  overflow: hidden;
+  border: 0.5px solid rgba(100, 110, 80, 0.2);
+}
+.avatar.sage {
+  background: var(--sage);
+  color: var(--pressed);
+}
+.avatar.lavender {
+  background: var(--lavender);
+  color: var(--lavender-dark);
+}
+.avatar.sand {
+  background: var(--sand);
+  color: var(--pressed);
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Fotografia lavada — tratamento de marca */
+.washed {
+  filter: saturate(0.85) contrast(0.95);
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Campos ────────────────────────────────────────────────────────── */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field > label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.input {
+  background: var(--field);
+  border: 0.5px solid var(--border-field);
+  border-radius: var(--r-pill);
+  min-height: 48px;
+  padding: 0 18px;
+  font-size: 15px;
+  color: var(--text);
+  width: 100%;
+}
+.input::placeholder {
+  color: var(--text-3);
+}
+.input.textarea {
+  border-radius: var(--r-md);
+  min-height: 74px;
+  padding: 14px 16px;
+  resize: none;
+  line-height: 1.5;
+}
+.field-error {
+  font-size: 11.5px;
+  color: var(--terracotta-dark);
+  padding-left: 4px;
+}
+.input.invalid {
+  border-color: var(--terracotta);
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  min-height: 44px;
+  padding: 4px 0;
+}
+.checkbox-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 0.5px solid var(--border-field);
+  background: var(--field);
+  display: grid;
+  place-items: center;
+  flex: none;
+  margin-top: 1px;
+}
+.checkbox-box.checked {
+  background: var(--moss);
+  border-color: var(--moss);
+}
+
+.toggle {
+  width: 50px;
+  height: 29px;
+  border-radius: var(--r-pill);
+  background: rgba(100, 110, 80, 0.22);
+  padding: 3px;
+  display: flex;
+  flex: none;
+  transition: background 160ms ease;
+}
+.toggle.on {
+  background: var(--moss);
+}
+.toggle-knob {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #fdffe6;
+  transition: transform 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.toggle.on .toggle-knob {
+  transform: translateX(21px);
+}
+
+/* ── Estatísticas e linhas de lista ────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+}
+.stat-value small {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.listrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  text-align: left;
+  min-height: 44px;
+  padding: 12px 0;
+}
+.listrow + .listrow {
+  border-top: 0.5px solid var(--rule);
+}
+
+/* ── Cabeçalho de ecrã ─────────────────────────────────────────────── */
+
+.screen-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0 16px;
+}
+
+/* ── Estado vazio ──────────────────────────────────────────────────── */
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 34px 20px;
+  color: var(--text-2);
+}
+.empty-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-pill);
+  background: var(--fill-moss);
+  border: 0.5px solid var(--fill-moss-border);
+  display: grid;
+  place-items: center;
+  margin-bottom: 2px;
+}

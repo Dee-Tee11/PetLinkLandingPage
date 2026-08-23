@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Pet Lynk — o lugar para almas gémeas patudas</title>
+<title>Pet Lynk — a saúde do teu animal organizada</title>
 <link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
 <link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
 <style>
@@ -45,26 +45,44 @@
     font-size: 1.1rem; font-weight: 700;
     color: var(--soft-black); letter-spacing: -0.5px;
   }
-  .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+
+  /* Entrada para a aplicação, servida em /app/ a partir do mesmo site. */
   .nav-cta {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 0 1.25rem;
     background: var(--soft-black); color: var(--cream);
-    padding: 0.55rem 1.4rem; border-radius: 100px;
-    font-size: 0.85rem; font-weight: 500;
-    text-decoration: none; transition: opacity 0.2s;
+    border-radius: 999px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem; font-weight: 500;
+    text-decoration: none;
+    transition: background 140ms ease;
   }
-  .nav-cta:hover { opacity: 0.75; }
+  .nav-cta:hover { background: var(--charcoal); }
+  .nav-cta:active { background: var(--charcoal); }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    min-height: 52px; padding: 0 1.75rem;
+    background: var(--soft-black); color: var(--cream);
+    border-radius: 999px;
+    font-size: 1rem; font-weight: 500;
+    text-decoration: none;
+    margin-top: 2.25rem;
+    transition: background 140ms ease, transform 140ms ease;
+  }
+  .hero-cta:hover { background: var(--charcoal); transform: translateY(-1px); }
+  .hero-cta:active { transform: none; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--moss); outline-offset: 2px;
+  }
 
   @media (max-width: 480px) {
     nav { padding: 0.85rem 1.25rem; }
     .nav-brand { font-size: 0.95rem; }
     .nav-logo { height: 26px; }
-    .nav-cta { padding: 0.45rem 1rem; font-size: 0.75rem; }
-    .nav-cta .nav-cta-full { display: none; }
-    .nav-cta .nav-cta-short { display: inline; }
-    .hero-ctas { flex-direction: column; align-items: center; }
-    .hero-pill { justify-content: center; width: 100%; max-width: 280px; }
+    .nav-cta { padding: 0 0.9rem; font-size: 0.82rem; min-height: 40px; }
   }
-  .nav-cta-short { display: none; }
 
   .hero {
     min-height: 100vh;
@@ -79,7 +97,6 @@
   @keyframes float1 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(24px,-20px) } }
   @keyframes float2 { 0%,100%{ transform:translate(0,0) } 50%{ transform:translate(-20px,16px) } }
 
-  .hero-eyebrow { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.5rem; position: relative; }
   .hero h1 {
     font-family: 'Averia Libre', cursive;
     font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 700; line-height: 1.08;
@@ -87,16 +104,7 @@
     margin-bottom: 1.5rem; position: relative;
   }
   .hero h1 em { font-style: italic; font-weight: 300; color: var(--moss); }
-  .hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.65; max-width: 480px; margin: 0 auto 2.5rem; position: relative; }
-  .hero-ctas { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; position: relative; }
-  .hero-pill {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(120,158,110,0.12); border: 0.5px solid rgba(120,158,110,0.3);
-    border-radius: 100px; padding: 0.6rem 1.2rem;
-    font-size: 0.88rem; color: var(--moss); font-weight: 500; text-decoration: none;
-  }
-  .hero-pill span { width: 7px; height: 7px; border-radius: 50%; background: var(--moss); display: inline-block; animation: pulse 2s ease-in-out infinite; }
-  @keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:0.3 } }
+  .hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.65; max-width: 480px; margin: 0 auto; position: relative; }
 
   /* ===================== MOCKUP STRIP ===================== */
   .mockup-strip {
@@ -135,7 +143,7 @@
   .section-title em { font-style: italic; font-weight: 300; color: var(--moss); }
   .section-body { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 540px; }
 
-  .what-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 4rem; align-items: start; }
+  .what-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem; }
   @media (max-width: 700px) { .what-grid { grid-template-columns: 1fr; } }
   .feature-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 20px; padding: 2rem 1.75rem; backdrop-filter: blur(8px); }
   .feature-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
@@ -230,45 +238,6 @@
   }
   /* ===================== END PETS MOSAIC ===================== */
 
-  .beta-section { padding: 7rem 2rem; position: relative; overflow: hidden; }
-  .beta-inner {
-    max-width: 680px; margin: 0 auto;
-    background: var(--card-bg); border: 0.5px solid var(--border);
-    border-radius: 32px; padding: 3.5rem;
-    backdrop-filter: blur(12px); position: relative; z-index: 1;
-  }
-  .beta-inner .section-title { margin-bottom: 0.6rem; }
-  .beta-inner .section-body { margin-bottom: 2.5rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
-  .form-group label { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; color: var(--muted); text-transform: uppercase; }
-  .form-group input, .form-group select, .form-group textarea {
-    background: rgba(255,255,245,0.8); border: 0.5px solid rgba(100,110,80,0.25);
-    border-radius: 12px; padding: 0.75rem 1rem;
-    font-family: 'DM Sans', sans-serif; font-size: 0.95rem; color: var(--soft-black);
-    outline: none; transition: border-color 0.2s; resize: none;
-  }
-  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--moss); background: rgba(255,255,245,0.98); }
-  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(100,100,80,0.4); }
-  .form-row-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  @media (max-width: 600px) { .form-row-inline { grid-template-columns: 1fr; } }
-  .checkbox-group { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 1.5rem; }
-  .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; min-width: 18px; border-radius: 5px; margin-top: 2px; accent-color: var(--moss); cursor: pointer; }
-  .checkbox-group label { font-size: 0.88rem; color: var(--muted); line-height: 1.55; cursor: pointer; }
-  .submit-btn {
-    width: 100%; background: var(--soft-black); color: var(--cream);
-    border: none; border-radius: 100px; padding: 0.9rem 2rem;
-    font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 500;
-    cursor: pointer; transition: opacity 0.2s, transform 0.15s;
-  }
-  .submit-btn:hover { opacity: 0.82; }
-  .submit-btn:active { transform: scale(0.99); }
-  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-  .form-note { font-size: 0.78rem; color: var(--muted); text-align: center; margin-top: 1rem; }
-  .success-msg { display: none; text-align: center; padding: 2rem 0; }
-  .success-emoji { font-size: 3rem; margin-bottom: 1rem; }
-  .success-msg h3 { font-family: 'Averia Libre', cursive; font-size: 1.8rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
-  .success-msg p { font-size: 0.95rem; color: var(--muted); }
-
   footer { padding: 5rem 2rem 3rem; border-top: 0.5px solid var(--border); background: rgba(200,210,185,0.08); }
   .footer-inner { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0; }
   .footer-cta-row { text-align: center; margin-bottom: 3.5rem; }
@@ -308,28 +277,20 @@
     <img src="images/logo/logo.svg" alt="Pet Lynk" class="nav-logo">
     <span class="nav-brand">Pet Lynk</span>
   </div>
-  <div class="nav-right">
-    <a href="#beta" class="nav-cta"><span class="nav-cta-full">Preenche o formulário</span><span class="nav-cta-short">Entrar</span></a>
-  </div>
+  <a class="nav-cta" href="/app/">Iniciar sessão</a>
 </nav>
 
 <section class="hero">
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
-  <p class="hero-eyebrow reveal">Teste beta aberto</p>
-  <h1 class="reveal reveal-delay-1">
-    A aplicação para as tuas<br/><em>almas gémeas</em> patudas
+  <h1 class="reveal">
+    Toda a vida do teu animal<br/><em>num só sítio</em>
   </h1>
-  <p class="hero-sub reveal reveal-delay-2">
-    Serviços de cuidado, agendamentos e acompanhamento para os teus animais — tudo num só lugar.
+  <p class="hero-sub reveal reveal-delay-1">
+    Consultas, vacinas e documentos sempre à mão — e pessoas de confiança quando precisas de deixar o teu animal com alguém.
   </p>
-  <div class="hero-ctas reveal reveal-delay-3">
-    <a href="#beta" class="hero-pill">
-      <span></span>
-      Preenche o formulário para entrar
-    </a>
-  </div>
+  <a class="hero-cta reveal reveal-delay-2" href="/app/">Entrar na aplicação</a>
 </section>
 
 <div class="mockup-strip">
@@ -374,24 +335,20 @@
 <section>
   <div class="section-inner">
     <p class="section-label reveal">O que é</p>
-    <h2 class="section-title reveal reveal-delay-1">Uma aplicação feita com <em>amor</em><br/>para quem ama os seus animais</h2>
-    <p class="section-body reveal reveal-delay-2">Nasceu da necessidade real de gerir tudo o que envolve ter um animal de estimação — do veterinário ao passeio, da tosquia à medicação. Com Pet Lynk, tens tudo organizado.</p>
+    <h2 class="section-title reveal reveal-delay-1">Feita para gerir <em>o essencial</em><br/>da vida do teu animal</h2>
+    <p class="section-body reveal reveal-delay-2">Consultas, vacinas e documentos deixam de andar espalhados por papéis, e-mails e conversas antigas. E quando precisas de deixar o teu animal com alguém, encontras quem já foi avaliado por outros tutores.</p>
     <div class="what-grid">
       <div class="feature-card reveal">
-        <h3>Perfil do teu animal</h3>
-        <p>Regista tudo sobre o teu animal: raça, peso, idade, vacinas, relatórios médicos e muito mais.</p>
+        <h3>Saúde e documentos num só sítio</h3>
+        <p>Consultas, vacinas, medicação e relatórios do veterinário organizados por animal. Nunca mais perdes um registo nem falhas uma data.</p>
       </div>
       <div class="feature-card reveal reveal-delay-1">
-        <h3>Cuidadores perto de ti</h3>
-        <p>Encontra cuidadores, tratadores e passeadores de cães na tua zona com avaliações reais e preços transparentes.</p>
+        <h3>Pessoas de confiança perto de ti</h3>
+        <p>Cuidadores, tratadores e passeadores da tua zona, com perfis verificados e avaliações reais de quem já lhes entregou o seu animal.</p>
       </div>
       <div class="feature-card reveal reveal-delay-2">
-        <h3>Agendamento fácil</h3>
-        <p>Marca serviços em segundos, recebe lembretes e acompanha o estado dos agendamentos em tempo real.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <h3>Historial de saúde</h3>
-        <p>Guarda consultas, vacinas e medicamentos num só lugar. Nunca mais perdes nenhum registo importante.</p>
+        <h3>Marcar em segundos</h3>
+        <p>Agenda um serviço em poucos toques, recebe lembretes e acompanha o estado da marcação em tempo real.</p>
       </div>
     </div>
   </div>
@@ -478,89 +435,6 @@
 </section>
 <!-- ===================== END BASTIDORES ===================== -->
 
-<section class="beta-section" id="beta">
-  <div class="blob blob-1" style="opacity:0.3;width:400px;height:400px;"></div>
-  <div class="blob blob-2" style="opacity:0.25;width:350px;height:350px;"></div>
-  <div class="beta-inner reveal">
-    <div id="form-content">
-      <p class="section-label">Teste beta aberto</p>
-      <h2 class="section-title">Preenche o formulário para entrar</h2>
-      <p class="section-body">Estamos a aceitar utilizadores para experimentar a Pet Lynk. Entra agora no teste beta e ajuda-nos a criar a melhor aplicação para os teus patudos.</p>
-      <div style="margin-top:2rem;">
-        <input type="hidden" id="access_key" value="9e8023e6-c581-43b7-9765-016d23d049d7" />
-        <div class="form-row-inline">
-          <div class="form-group">
-            <label for="name">Nome</label>
-            <input type="text" id="name" placeholder="O teu nome" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Correio eletrónico</label>
-            <input type="email" id="email" placeholder="nome@exemplo.pt" required />
-          </div>
-        </div>
-        <div class="form-row-inline">
-          <div class="form-group">
-            <label for="phone">Número de Telemóvel</label>
-            <input type="tel" id="phone" placeholder="+351 9XXXXXXXX" required />
-          </div>
-          <div class="form-group">
-            <label for="city">Cidade</label>
-            <input type="text" id="city" placeholder="Porto, Gaia, Espinho…" />
-          </div>
-        </div>
-        <div class="form-row-inline">
-          <div class="form-group">
-            <label for="pets">Quantos animais tens?</label>
-            <select id="pets">
-              <option value="">Seleciona…</option>
-              <option value="1">1 animal</option>
-              <option value="2">2 animais</option>
-              <option value="3">3 ou mais</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="pettype">Tipo de animal</label>
-          <select id="pettype">
-            <option value="">Seleciona…</option>
-            <option value="cao">Cão 🐕</option>
-            <option value="gato">Gato 🐈</option>
-            <option value="ambos">Cão e Gato 🐾</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="role">Quero usar a aplicação como…</label>
-          <select id="role">
-            <option value="">Seleciona…</option>
-            <option value="dono">Tutor de animal</option>
-            <option value="cuidador">Prestador de serviços</option>
-            <option value="empresa">Empresa</option>
-            <option value="ambos">Ambos</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="why">Porquê o Pet Lynk? (opcional)</label>
-          <textarea id="why" rows="3" placeholder="Conta-nos o que mais te interessa na aplicação…"></textarea>
-        </div>
-        <div class="checkbox-group">
-          <input type="checkbox" id="agree" />
-          <label for="agree">Aceito receber novidades sobre o Pet Lynk e percebo que os meus dados são usados apenas para este fim.</label>
-        </div>
-        <button class="submit-btn" id="submit-btn" onclick="submitForm()">
-          Quero entrar no teste 🐾
-        </button>
-        <p class="form-note">Sem mensagens indesejadas. Prometemos. 🤞</p>
-      </div>
-    </div>
-    <div class="success-msg" id="success-msg">
-      <div class="success-emoji">🎉</div>
-      <h3>Estás na lista!</h3>
-      <p id="success-text">Obrigado pela tua candidatura. Vamos entrar em contacto em breve com as próximas novidades do Pet Lynk.</p>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-cta-row">
@@ -621,59 +495,6 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-  async function submitForm() {
-    const name    = document.getElementById('name').value.trim();
-    const email   = document.getElementById('email').value.trim();
-    const phone   = document.getElementById('phone').value.trim();
-    const city    = document.getElementById('city').value.trim();
-    const pets    = document.getElementById('pets').value;
-    const pettype = document.getElementById('pettype').value;
-    const role    = document.getElementById('role').value;
-    const why     = document.getElementById('why').value.trim();
-    const agree   = document.getElementById('agree').checked;
-
-    if (!name || !email || !phone) { alert('Por favor preenche o nome, correio eletrónico e número de telemóvel.'); return; }
-    if (!agree) { alert('Por favor aceita os termos para continuar.'); return; }
-
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.textContent = 'A enviar…';
-
-    const payload = {
-      access_key: document.getElementById('access_key').value,
-      subject: '🐾 Nova candidatura ao teste beta — Pet Lynk',
-      name, email,
-      telemovel: phone,
-      cidade: city || '—',
-      numero_de_animais: pets || '—',
-      tipo_de_animal: pettype || '—',
-      perfil: role || '—',
-      mensagem: why || '—',
-    };
-
-    try {
-      const res = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-      const data = await res.json();
-      if (data.success) {
-        document.getElementById('form-content').style.display = 'none';
-        const s = document.getElementById('success-msg');
-        s.style.display = 'block';
-        document.getElementById('success-text').textContent =
-          `Obrigado, ${name}! Vamos entrar em contacto para ${email} em breve.`;
-      } else {
-        throw new Error(data.message || 'Envio falhou');
-      }
-    } catch (err) {
-      alert('Ocorreu um erro ao enviar. Tenta novamente ou contacta-nos diretamente.');
-      btn.disabled = false;
-      btn.textContent = 'Quero entrar no teste 🐾';
-    }
-  }
 </script>
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

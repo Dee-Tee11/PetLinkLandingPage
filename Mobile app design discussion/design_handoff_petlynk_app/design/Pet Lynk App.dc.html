@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="_ds/organic-65cbcb17-8a99-4c89-8abf-6c6958983b7d/styles.css">
+<script src="_ds/organic-65cbcb17-8a99-4c89-8abf-6c6958983b7d/_ds_bundle.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Averia+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f3f1e7}
+a{color:#7a9e6e;text-decoration:none}
+a:hover{color:#5f7f55}
+</style>
+</helmet>
+
+<section style="padding:44px 48px 40px;border-bottom:1px solid rgba(0,0,0,0.08);font-family:'DM Sans',sans-serif;color:#1a1a18" id="t2" data-screen-label="Turn 2">
+  <div style="display:flex;align-items:baseline;gap:11px;margin-bottom:8px">
+    <a href="#t2" style="font:600 10px ui-monospace,Menlo,monospace;padding:4px 8px;background:#1a1a18;color:#fdffe6;border-radius:5px">2</a>
+    <span style="font-family:'Averia Libre',cursive;font-size:20px;font-weight:700;letter-spacing:-0.02em">O lado do cuidador</span>
+  </div>
+  <p style="font-size:13px;line-height:1.6;color:#5f5f54;max-width:660px;margin:0 0 28px">
+    Mesma conta, modo cuidadora ativo em <a href="#1b">1b</a> (ecrã 14). A barra de separadores passa a lavanda para se
+    perceber de imediato em que lado estás: Início, Pedidos, Ganhos, Perfil. O pedido chega com o registo médico
+    já partilhado — alergias e medicação antes de aceitar — e o dinheiro só é libertado ao terminar o serviço.
+  </p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start">
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px" id="2a">
+      <div style="display:flex;align-items:baseline;gap:9px;font-size:11.5px;color:#7a7a6c">
+        <a href="#2a" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(0,0,0,0.07);color:#1a1a18;border-radius:5px">2a</a>
+        Pedido → aceitar → serviço → pago
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(5,372px);gap:24px">
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Cuidador — início">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="cgHome" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">15 · Agenda e pedidos</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Cuidador — pedido">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="cgRequest" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">16 · Pedido a aguardar</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Cuidador — serviço a decorrer">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="cgActive" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">17 · Serviço a decorrer</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Cuidador — ganhos">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="cgEarnings" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">18 · Ganhos e transferências</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Cuidador — perfil">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="cgProfile" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">19 · Perfil, preços, disponibilidade</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:12.5px;line-height:1.6;color:#8a8a7c;margin:30px 0 0">
+    A seguir: "abre o fluxo do cuidador no protótipo <a href="#1a">1a</a>" · "estados de recusa e cancelamento" · "versão em inglês"
+  </p>
+</section>
+
+<section style="padding:44px 48px 40px;font-family:'DM Sans',sans-serif;color:#1a1a18" id="t1" data-screen-label="Turn 1">
+  <div style="display:flex;align-items:baseline;gap:11px;margin-bottom:8px">
+    <a href="#t1" style="font:600 10px ui-monospace,Menlo,monospace;padding:4px 8px;background:#1a1a18;color:#fdffe6;border-radius:5px">1</a>
+    <span style="font-family:'Averia Libre',cursive;font-size:20px;font-weight:700;letter-spacing:-0.02em">Pet Lynk — aplicação móvel</span>
+  </div>
+  <p style="font-size:13px;line-height:1.6;color:#5f5f54;max-width:660px;margin:0 0 8px">
+    Evolução fiel dos vossos mockups: mesmo creme grão-fino, blobs sage/lavanda, Averia Libre em itálico para nomes,
+    barra de 4 separadores. Sobre isso: confiança visível (verificação, referências, avaliações com foto),
+    pagamento retido, e o registo médico como espinha dorsal. Copy em PT-PT, preço fixo por serviço.
+  </p>
+  <p style="font-size:12.5px;line-height:1.6;color:#8a8a7c;max-width:660px;margin:0 0 28px">
+    <a href="#1a">1a</a> é clicável — segue Pesquisar → Rita → Agendar → Pagar → Confirmado.
+    <a href="#1b">1b</a> mostra os 14 ecrãs estáticos.
+  </p>
+
+  <div style="display:flex;flex-wrap:wrap;gap:44px;align-items:flex-start">
+
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px" id="1a">
+      <div style="display:flex;align-items:baseline;gap:9px;font-size:11.5px;color:#7a7a6c">
+        <a href="#1a" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(0,0,0,0.07);color:#1a1a18;border-radius:5px">1a</a>
+        Protótipo clicável
+      </div>
+
+      <div style="display:flex;gap:26px;align-items:flex-start">
+        <div style="width:372px;border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 26px 64px rgba(60,62,40,0.16),0 4px 12px rgba(60,62,40,0.08)">
+          <dc-import name="PetLynkScreen" screen="{{ live }}" on-nav="{{ nav }}" hint-size="360px,760px"></dc-import>
+        </div>
+
+        <div style="width:216px;padding-top:6px">
+          <p style="font-size:10.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a7c;margin:0 0 12px">Fluxo de reserva</p>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <button onClick="{{ goSearch }}" style="text-align:left;background:rgba(255,255,255,0.7);border:0.5px solid rgba(100,110,80,0.18);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">1 · Pesquisar cuidadores</button>
+            <button onClick="{{ goCaregiver }}" style="text-align:left;background:rgba(255,255,255,0.7);border:0.5px solid rgba(100,110,80,0.18);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">2 · Perfil da Rita</button>
+            <button onClick="{{ goBook }}" style="text-align:left;background:rgba(255,255,255,0.7);border:0.5px solid rgba(100,110,80,0.18);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">3 · Agendar</button>
+            <button onClick="{{ goPay }}" style="text-align:left;background:rgba(255,255,255,0.7);border:0.5px solid rgba(100,110,80,0.18);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">4 · Pagamento</button>
+            <button onClick="{{ goConfirmed }}" style="text-align:left;background:rgba(255,255,255,0.7);border:0.5px solid rgba(100,110,80,0.18);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">5 · Confirmado</button>
+            <button onClick="{{ goTracking }}" style="text-align:left;background:rgba(255,255,255,0.7);border:0.5px solid rgba(100,110,80,0.18);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">6 · Acompanhar</button>
+          </div>
+          <p style="font-size:10.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#8a8a7c;margin:20px 0 12px">Lado do cuidador</p>
+          <div style="display:flex;flex-direction:column;gap:7px">
+            <button onClick="{{ goCgHome }}" style="text-align:left;background:rgba(197,195,224,0.28);border:0.5px solid rgba(120,115,180,0.25);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">1 · Agenda e pedidos</button>
+            <button onClick="{{ goCgRequest }}" style="text-align:left;background:rgba(197,195,224,0.28);border:0.5px solid rgba(120,115,180,0.25);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">2 · Pedido a aguardar</button>
+            <button onClick="{{ goCgActive }}" style="text-align:left;background:rgba(197,195,224,0.28);border:0.5px solid rgba(120,115,180,0.25);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">3 · Serviço a decorrer</button>
+            <button onClick="{{ goCgEarnings }}" style="text-align:left;background:rgba(197,195,224,0.28);border:0.5px solid rgba(120,115,180,0.25);border-radius:14px;padding:11px 13px;font-family:'DM Sans',sans-serif;font-size:12.5px;color:#1a1a18;cursor:pointer;min-height:44px">4 · Ganhos libertados</button>
+          </div>
+          <p style="font-size:11.5px;line-height:1.55;color:#8a8a7c;margin:16px 0 12px">Ecrã atual: <strong style="color:#1a1a18">{{ live }}</strong></p>
+          <button onClick="{{ goIntro }}" style="background:#1a1a18;color:#fdffe6;border:none;border-radius:999px;min-height:44px;padding:0 20px;font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:500;cursor:pointer">Reiniciar no onboarding</button>
+        </div>
+      </div>
+    </div>
+
+    <sc-if value="{{ showWall }}" hint-placeholder-val="{{ true }}">
+    <div style="flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px" id="1b">
+      <div style="display:flex;align-items:baseline;gap:9px;font-size:11.5px;color:#7a7a6c">
+        <a href="#1b" style="font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 8px;background:rgba(0,0,0,0.07);color:#1a1a18;border-radius:5px">1b</a>
+        Os 14 ecrãs
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(5,372px);gap:28px 24px">
+
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Onboarding">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="intro" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">01 · Onboarding</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Criar conta">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="signup" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">02 · Criar conta</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Início">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="home" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">03 · Início</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Perfil do pet">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="pet" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">04 · Perfil e registo médico</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Pesquisa">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="search" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">05 · Pesquisa e filtros</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Perfil do cuidador">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="caregiver" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">06 · Cuidadora verificada</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Agendar">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="book" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">07 · Agendar</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Pagamento">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="pay" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">08 · Pagamento seguro</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Confirmado">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="confirmed" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">09 · Confirmado</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Acompanhamento">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="tracking" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">10 · Mapa e atualizações</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Conversa">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="chat" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">11 · Conversa</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Agendamentos">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="bookings" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">12 · Agendamentos</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Lembretes">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="reminders" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">13 · Vacinas e medicação</span>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:9px" data-screen-label="Conta">
+          <div style="border-radius:34px;overflow:hidden;background:#fdffe6;border:6px solid rgba(255,255,255,0.85);box-shadow:0 18px 44px rgba(60,62,40,0.13)"><dc-import name="PetLynkScreen" screen="settings" hint-size="360px,760px"></dc-import></div>
+          <span style="font-family:'Averia Libre',cursive;font-size:13px;color:#7a7a6c;text-align:center">14 · Conta e modo cuidador</span>
+        </div>
+
+      </div>
+    </div>
+    </sc-if>
+
+  </div>
+
+  <p style="font-size:12.5px;line-height:1.6;color:#8a8a7c;margin:30px 0 0">
+    A seguir: "o lado do cuidador — pedido a entrar, aceitar, serviço em curso" · "versão em inglês de <a href="#1b">1b</a>" · "mais direções visuais para o <a href="#1a">1a</a>"
+  </p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;intro&quot;,&quot;signup&quot;,&quot;home&quot;,&quot;pet&quot;,&quot;search&quot;,&quot;caregiver&quot;,&quot;book&quot;,&quot;pay&quot;,&quot;confirmed&quot;,&quot;tracking&quot;,&quot;chat&quot;,&quot;bookings&quot;,&quot;reminders&quot;,&quot;settings&quot;],&quot;default&quot;:&quot;search&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Protótipo&quot;},&quot;showWall&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Apresentação&quot;}}">
+class Component extends DCLogic {
+  state = { live: null };
+  renderVals() {
+    const live = this.state.live || this.props.startScreen || "search";
+    const nav = (s) => this.setState({ live: s });
+    const go = (s) => () => nav(s);
+    return {
+      live, nav,
+      showWall: this.props.showWall !== false,
+      goIntro: go("intro"), goSearch: go("search"), goCaregiver: go("caregiver"),
+      goBook: go("book"), goPay: go("pay"), goConfirmed: go("confirmed"),
+      goTracking: go("tracking"),
+      goCgHome: go("cgHome"), goCgRequest: go("cgRequest"),
+      goCgActive: go("cgActive"), goCgEarnings: go("cgEarnings")
+    };
+  }
+}
+
+</script>
+</body>
+</html>

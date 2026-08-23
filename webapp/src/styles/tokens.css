@@ -1,0 +1,67 @@
+/* Pet Lynk — tokens do handoff móvel.
+   Fonte de verdade: design_handoff_petlynk_app/README.md, secção "Design Tokens".
+   NÃO usar design/_ds/styles.css — é outro tema (Organic) e não corresponde aos ecrãs. */
+
+:root {
+  /* Cores */
+  --app-bg: #fdffe6;
+  --text: #1a1a18;
+  --text-2: #6b6b60;
+  --text-3: #9a9a8c;
+  --pressed: #2c2c2a;
+
+  --moss: #7a9e6e;
+  --moss-dark: #5f7f55;
+  --moss-deep: #4f6b46;
+  --sage: #b8cba0;
+  --lavender: #c5c3e0;
+  --lavender-dark: #3c3a5c;
+  --sand: #e8cdb5;
+  --terracotta: #c67139;
+  --terracotta-dark: #a85c2c;
+  --terracotta-deep: #8f4f26;
+
+  /* Superfícies */
+  --card: rgba(255, 255, 240, 0.82);
+  --card-strong: rgba(255, 255, 240, 0.92);
+  --card-soft: rgba(255, 255, 240, 0.7);
+  --field: rgba(255, 255, 245, 0.85);
+
+  /* Bordos e réguas */
+  --border-card: rgba(100, 110, 80, 0.16);
+  --border-field: rgba(100, 110, 80, 0.25);
+  --border-dashed: rgba(100, 110, 80, 0.35);
+  --rule: rgba(100, 110, 80, 0.14);
+  --tab-idle: rgba(60, 62, 50, 0.42);
+
+  /* Fills tonais */
+  --fill-moss: rgba(120, 158, 110, 0.14);
+  --fill-moss-border: rgba(120, 158, 110, 0.3);
+  --fill-terracotta: rgba(198, 113, 57, 0.1);
+  --fill-terracotta-border: rgba(198, 113, 57, 0.3);
+  --fill-lavender: rgba(197, 195, 224, 0.22);
+  --fill-lavender-border: rgba(120, 115, 180, 0.25);
+
+  /* Chrome do modo cuidador */
+  --cg-tabbar: rgba(197, 195, 224, 0.35);
+  --cg-tabbar-border: rgba(120, 115, 180, 0.22);
+  --tabbar: rgba(253, 255, 230, 0.9);
+  --tabbar-border: rgba(100, 110, 80, 0.14);
+
+  /* Raios */
+  --r-lg: 22px;
+  --r-xl: 24px;
+  --r-md: 18px;
+  --r-sm: 16px;
+  --r-xs: 14px;
+  --r-pill: 999px;
+
+  /* Tipografia */
+  --font-display: 'Averia Libre', cursive;
+  --font-body: 'DM Sans', sans-serif;
+
+  /* Métricas */
+  --gutter: 20px;
+  --tabbar-h: 64px;
+  --app-max-w: 420px;
+}

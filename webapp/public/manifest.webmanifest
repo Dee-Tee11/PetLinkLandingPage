@@ -1,0 +1,20 @@
+{
+  "name": "Pet Lynk",
+  "short_name": "Pet Lynk",
+  "description": "Cuidadores verificados e o registo médico do teu patudo.",
+  "lang": "pt-PT",
+  "start_url": "/app/inicio",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdffe6",
+  "theme_color": "#fdffe6",
+  "icons": [
+    {
+      "src": "/images/logo/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
