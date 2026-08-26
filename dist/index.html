@@ -106,33 +106,6 @@
   .hero h1 em { font-style: italic; font-weight: 300; color: var(--moss); }
   .hero-sub { font-size: 1.1rem; color: var(--muted); line-height: 1.65; max-width: 480px; margin: 0 auto; position: relative; }
 
-  /* ===================== MOCKUP STRIP ===================== */
-  .mockup-strip {
-    padding: 4rem 2rem 5rem;
-    display: flex; justify-content: center; align-items: flex-end;
-    gap: 1.5rem; flex-wrap: wrap; position: relative;
-    max-width: 1400px; margin: 0 auto;
-  }
-  .phone-wrap {
-    display: flex; flex-direction: column; align-items: center;
-    gap: 1rem; transform-origin: bottom center;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-  .phone-wrap:hover { transform: scale(1.07); }
-  .phone-wrap.featured { transform: scale(1.06); }
-  .phone-wrap.featured:hover { transform: scale(1.13); }
-  .phone-frame {
-    width: 200px; border-radius: 30px; overflow: hidden;
-    box-shadow: 0 24px 60px rgba(0,0,0,0.13), 0 4px 12px rgba(0,0,0,0.07);
-    border: 6px solid rgba(255,255,255,0.7); background: #fdffe6;
-    position: relative; transition: box-shadow 0.35s ease;
-  }
-  .phone-wrap:hover .phone-frame { box-shadow: 0 32px 80px rgba(0,0,0,0.18), 0 6px 18px rgba(0,0,0,0.09); }
-  .phone-frame img { width: 100%; height: 400px; object-fit: cover; object-position: top center; display: block; }
-  .phone-frame img.pets-img { height: 400px; object-fit: cover; object-position: top center; transform-origin: top center; transform: scale(1.35) translateY(-14%); }
-  .phone-caption { font-family: 'Averia Libre', cursive; font-size: 0.85rem; color: var(--muted); text-align: center; transition: color 0.2s; }
-  .phone-wrap:hover .phone-caption { color: var(--soft-black); }
-
   section { padding: 7rem 2rem; position: relative; }
   .section-inner { max-width: 1080px; margin: 0 auto; }
   .section-label { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.18em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.2rem; }
@@ -276,12 +249,6 @@
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
   .reveal-delay-3 { transition-delay: 0.3s; }
-  .phone-wrap.reveal { transform: translateY(28px) scale(1); transform-origin: bottom center; }
-  .phone-wrap.reveal.visible { transform: translateY(0) scale(1); }
-  .phone-wrap.reveal.featured { transform: translateY(28px) scale(1); }
-  .phone-wrap.reveal.featured.visible { transform: translateY(0) scale(1.06); }
-  .phone-wrap.visible:hover { transform: translateY(0) scale(1.07) !important; }
-  .phone-wrap.featured.visible:hover { transform: translateY(0) scale(1.13) !important; }
 </style>
 </head>
 <body>
@@ -306,45 +273,6 @@
   </p>
   <a class="hero-cta reveal reveal-delay-2" href="/app/">Entrar na aplicação</a>
 </section>
-
-<div class="mockup-strip">
-  <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/inicio.svg" alt="Ecrã inicial da Pet Lynk" /></div>
-    <span class="phone-caption">Ecrã inicial</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/home.svg" alt="Boas-vindas da Pet Lynk" /></div>
-    <span class="phone-caption">Início 1</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame"><img src="images/imagesDemo/home(1).svg" alt="Página inicial da Pet Lynk" /></div>
-    <span class="phone-caption">Início 2</span>
-  </div>
-  <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/services.svg" alt="Serviços da Pet Lynk" /></div>
-    <span class="phone-caption">Serviços</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/services(1).svg" alt="Agendamento na Pet Lynk" /></div>
-    <span class="phone-caption">Agendar</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-2">
-    <div class="phone-frame"><img src="images/imagesDemo/services(2).svg" alt="Detalhe de serviços da Pet Lynk" /></div>
-    <span class="phone-caption">Serviços 2</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-3">
-    <div class="phone-frame"><img src="images/imagesDemo/services(3).svg" alt="Outro detalhe de serviços da Pet Lynk" /></div>
-    <span class="phone-caption">Serviços 3</span>
-  </div>
-  <div class="phone-wrap reveal">
-    <div class="phone-frame"><img src="images/imagesDemo/pets.svg" alt="Cuidados de animais na Pet Lynk" class="pets-img" /></div>
-    <span class="phone-caption">Animal 1</span>
-  </div>
-  <div class="phone-wrap reveal reveal-delay-1">
-    <div class="phone-frame"><img src="images/imagesDemo/pets(1).svg" alt="Animais na Pet Lynk" class="pets-img" /></div>
-    <span class="phone-caption">Animal 2</span>
-  </div>
-</div>
 
 <section>
   <div class="section-inner">
