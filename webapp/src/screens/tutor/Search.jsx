@@ -61,7 +61,7 @@ export default function Search() {
           </Empty>
         </Card>
       ) : (
-        <div className="stack" style={{ gap: 12 }}>
+        <div className="stack desk-cards" style={{ gap: 12 }}>
           {results.map((c) => {
             const price = c.priceList.find((p) => p.code === service);
             return (

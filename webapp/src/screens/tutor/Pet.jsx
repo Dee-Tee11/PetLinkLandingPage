@@ -32,6 +32,8 @@ export default function Pet() {
         <span style={{ fontSize: 12, color: 'var(--text-2)' }}>Registo médico</span>
       </div>
 
+      <div className="desk-two-col">
+        <div>
       <div className="row" style={{ gap: 14, marginBottom: 20 }}>
         <PetPhoto src={pet.photo} alt={pet.name} height={76} round />
         <div>
@@ -99,6 +101,8 @@ export default function Pet() {
         })}
       </Card>
 
+        </div>
+        <div>
       <SectionLabel style={{ margin: '0 0 10px' }}>Medicação ativa</SectionLabel>
       {activeMed ? (
         <Card className="row" style={{ gap: 12, padding: '14px 16px', borderRadius: 20, marginBottom: 18 }}>
@@ -157,6 +161,8 @@ export default function Pet() {
         </span>
         <span className="t-secondary">{plural(pet.reports.length, 'ficheiro', 'ficheiros')}</span>
       </Card>
+        </div>
+      </div>
     </div>
   );
 }

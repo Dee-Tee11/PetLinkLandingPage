@@ -44,6 +44,8 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="desk-two-col">
+        <div>
       {/* Carrossel de animais */}
       {pets.length === 0 ? (
         <Card style={{ marginBottom: 22 }}>
@@ -126,6 +128,8 @@ export default function Home() {
         </Card>
       )}
 
+        </div>
+        <div>
       {/* Serviços */}
       <SectionLabel>Serviços</SectionLabel>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10 }}>
@@ -163,6 +167,8 @@ export default function Home() {
           </p>
         </Card>
       )}
+        </div>
+      </div>
     </div>
   );
 }

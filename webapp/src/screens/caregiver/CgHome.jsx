@@ -61,7 +61,7 @@ export default function CgHome() {
           </Empty>
         </Card>
       ) : (
-        <div className="stack" style={{ gap: 11, marginBottom: 20 }}>
+        <div className="stack desk-cards" style={{ gap: 11, marginBottom: 20 }}>
           {pending.map((b, i) => {
             const pet = getPet(b.petId);
             const tutor = getUser(b.tutorId);

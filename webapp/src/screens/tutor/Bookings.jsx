@@ -60,7 +60,7 @@ export default function Bookings() {
           </Empty>
         </Card>
       ) : (
-        <div className="stack" style={{ gap: 12 }}>
+        <div className="stack desk-cards" style={{ gap: 12 }}>
           {list.map((b) => {
             const caregiver = getCaregiver(b.caregiverId);
             const pet = getPet(b.petId);

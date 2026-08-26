@@ -44,7 +44,7 @@ export default function Chat() {
   }
 
   return (
-    <div className="stack" style={{ height: '100%' }}>
+    <div className="stack chat-root" style={{ height: '100%' }}>
       {/* Cabeçalho */}
       <div
         className="row"

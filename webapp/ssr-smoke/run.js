@@ -9,14 +9,32 @@ const routes = [
   '/cuidar/ganhos', '/cuidar/perfil', '/rota-inexistente',
 ];
 
-let failed = 0;
-for (const r of routes) {
+/* O layout depende da largura da janela. Em Node não há window, por isso
+   simulamos as duas: sem window = telemóvel, com matchMedia a dar true = desktop. */
+function withViewport(desktop, fn) {
+  if (!desktop) return fn();
+  globalThis.window = {
+    matchMedia: () => ({ matches: true, addEventListener() {}, removeEventListener() {} }),
+    location: { search: '' },
+  };
   try {
-    const html = render(r);
-    console.log(`ok    ${r.padEnd(26)} ${html.length} chars`);
-  } catch (e) {
-    failed++;
-    console.log(`FALHA ${r.padEnd(26)} ${e.message}`);
+    return fn();
+  } finally {
+    delete globalThis.window;
+  }
+}
+
+let failed = 0;
+for (const [label, desktop] of [['telemóvel', false], ['desktop', true]]) {
+  console.log(`\n── ${label} ──`);
+  for (const r of routes) {
+    try {
+      const html = withViewport(desktop, () => render(r));
+      console.log(`ok    ${r.padEnd(26)} ${html.length} chars`);
+    } catch (e) {
+      failed++;
+      console.log(`FALHA ${r.padEnd(26)} ${e.message}`);
+    }
   }
 }
 process.exit(failed ? 1 : 0);
