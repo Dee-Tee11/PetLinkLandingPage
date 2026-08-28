@@ -73,6 +73,27 @@
   .hero-cta:hover { background: var(--charcoal); transform: translateY(-1px); }
   .hero-cta:active { transform: none; }
 
+  /* Indicador de scroll, ancorado ao fundo do primeiro ecrã. */
+  .scroll-hint {
+    position: absolute; left: 50%; bottom: 2.5rem; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+    color: var(--muted); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 0.02em;
+    padding: 0.5rem 1rem; border-radius: 999px;
+    transition: color 160ms ease;
+    /* Sem .reveal: essa classe usa transform e anularia a centragem. */
+    opacity: 0; animation: hint-in 0.7s ease 0.5s forwards;
+  }
+  @keyframes hint-in { to { opacity: 1; } }
+  .scroll-hint:hover { color: var(--soft-black); }
+  .scroll-hint svg { animation: nudge 1.9s ease-in-out infinite; }
+  @keyframes nudge {
+    0%, 100% { transform: translateY(0); opacity: 0.75; }
+    50%      { transform: translateY(6px); opacity: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .scroll-hint svg { animation: none; } }
+  @media (max-height: 680px) { .scroll-hint { display: none; } }
+
   a:focus-visible, button:focus-visible {
     outline: 2px solid var(--moss); outline-offset: 2px;
   }
@@ -116,25 +137,34 @@
   .section-title em { font-style: italic; font-weight: 300; color: var(--moss); }
   .section-body { font-size: 1.05rem; color: var(--muted); line-height: 1.7; max-width: 540px; }
 
-  .what-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 4rem; }
-  @media (max-width: 1000px) { .what-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; } }
-  @media (max-width: 700px) { .what-grid { grid-template-columns: 1fr; } }
-
-  /* Como funciona — três passos */
-  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 4rem; }
-  @media (max-width: 700px) { .steps-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+  /* Como funciona — quatro passos, cada um com a sua ilustração */
+  .steps-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 3.5rem; }
+  .step-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) 168px;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--card-bg);
+    border: 0.5px solid var(--border);
+    border-radius: 22px;
+    padding: 1.75rem 2rem;
+    backdrop-filter: blur(8px);
+  }
   .step-num {
-    width: 44px; height: 44px; border-radius: 999px;
+    width: 40px; height: 40px; border-radius: 999px; flex: none;
     background: var(--soft-black); color: var(--cream);
     display: flex; align-items: center; justify-content: center;
-    font-family: 'Averia Libre', cursive; font-size: 1.05rem; font-weight: 700;
-    margin-bottom: 1.1rem;
+    font-family: 'Averia Libre', cursive; font-size: 1rem; font-weight: 700;
+    align-self: start;
   }
-  .step-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
-  .step-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
-  .feature-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 20px; padding: 2rem 1.75rem; backdrop-filter: blur(8px); }
-  .feature-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.2rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.5rem; }
-  .feature-card p { font-size: 0.93rem; color: var(--muted); line-height: 1.65; }
+  .step-card h3 { font-family: 'Averia Libre', cursive; font-size: 1.25rem; font-weight: 700; color: var(--soft-black); margin-bottom: 0.45rem; }
+  .step-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.65; max-width: 46ch; }
+  .step-art { width: 168px; height: 140px; object-fit: contain; justify-self: end; }
+
+  @media (max-width: 860px) {
+    .step-card { grid-template-columns: auto minmax(0, 1fr); padding: 1.5rem 1.5rem; }
+    .step-art { display: none; }
+  }
 
   .team-section { background: rgba(200,210,185,0.12); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 4rem; }
@@ -272,31 +302,21 @@
     Consultas, vacinas e documentos sempre à mão — e pessoas de confiança quando precisas de deixar o teu animal com alguém.
   </p>
   <a class="hero-cta reveal reveal-delay-2" href="/app/">Entrar na aplicação</a>
+
+  <a class="scroll-hint" href="#o-que-e">
+    <span>Descobre como funciona</span>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+         stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 5v14"/><path d="m19 12-7 7-7-7"/>
+    </svg>
+  </a>
 </section>
 
-<section>
+<section id="o-que-e">
   <div class="section-inner">
     <p class="section-label reveal">O que é</p>
     <h2 class="section-title reveal reveal-delay-1">Feita para gerir <em>o essencial</em><br/>da vida do teu animal</h2>
     <p class="section-body reveal reveal-delay-2">O Pet Lynk é uma aplicação portuguesa que junta duas coisas que hoje andam separadas: o <strong>registo de saúde</strong> do teu animal e as <strong>pessoas que cuidam dele</strong> quando tu não podes. Consultas, vacinas e documentos deixam de andar espalhados por papéis, e-mails e conversas antigas — e quando precisas de deixar o teu animal com alguém, encontras cuidadores da tua zona já avaliados por outros tutores.</p>
-    <div class="what-grid">
-      <div class="feature-card reveal">
-        <h3>Saúde e documentos num só sítio</h3>
-        <p>Consultas, vacinas, medicação e relatórios do veterinário organizados por animal. Nunca mais perdes um registo nem falhas uma data.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-1">
-        <h3>Pessoas de confiança perto de ti</h3>
-        <p>Cuidadores, tratadores e passeadores da tua zona, com perfis verificados e avaliações reais de quem já lhes entregou o seu animal.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <h3>Marcar em segundos</h3>
-        <p>Agenda um serviço em poucos toques, com o preço à vista antes de confirmares. Depois é só receberes os lembretes.</p>
-      </div>
-      <div class="feature-card reveal reveal-delay-3">
-        <h3>Acompanha em direto</h3>
-        <p>Durante o serviço recebes o check-in, fotos e notas de quem está com o teu animal. Sabes como ele está sem ter de perguntar.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -305,21 +325,41 @@
   <div class="section-inner">
     <p class="section-label reveal">Como funciona</p>
     <h2 class="section-title reveal reveal-delay-1">Do registo do teu animal<br/>até <em>ao fim do serviço</em></h2>
-    <div class="steps-grid">
+    <div class="steps-list">
       <div class="step-card reveal">
         <div class="step-num">1</div>
-        <h3>Cria o perfil do teu animal</h3>
-        <p>Raça, idade, peso, vacinas, medicação e alergias. Fica tudo organizado num sítio só, e avisamos-te quando uma vacina está a chegar ao fim.</p>
+        <div class="step-text">
+          <h3>Cria o perfil do teu animal</h3>
+          <p>Raça, idade, peso, vacinas, medicação e alergias. Fica tudo organizado num sítio só, e avisamos-te quando uma vacina está a chegar ao fim.</p>
+        </div>
+        <img class="step-art" src="images/steps/step1-perfil.svg" alt="" loading="lazy" />
       </div>
+
       <div class="step-card reveal reveal-delay-1">
         <div class="step-num">2</div>
-        <h3>Encontra quem cuida</h3>
-        <p>Procura na tua zona por passeio, banho ou petsitting. Vês o perfil, o que já foi verificado, as avaliações de outros tutores e o preço — antes de decidires.</p>
+        <div class="step-text">
+          <h3>Encontra quem cuida</h3>
+          <p>Procura na tua zona por passeio, banho ou petsitting. Vês o perfil, o que já foi verificado, as avaliações de outros tutores e o preço — antes de decidires.</p>
+        </div>
+        <img class="step-art" src="images/steps/step2-cuidador.svg" alt="" loading="lazy" />
       </div>
+
       <div class="step-card reveal reveal-delay-2">
         <div class="step-num">3</div>
-        <h3>Marca e acompanha</h3>
-        <p>Escolhes o dia e a hora, decides se partilhas o registo médico com o cuidador, e segues o serviço em direto até ao fim.</p>
+        <div class="step-text">
+          <h3>Marca em segundos</h3>
+          <p>Escolhes o dia e a hora, decides se partilhas o registo médico com o cuidador, e confirmas. Depois é só receberes os lembretes.</p>
+        </div>
+        <img class="step-art" src="images/steps/step3-marcar.svg" alt="" loading="lazy" />
+      </div>
+
+      <div class="step-card reveal reveal-delay-3">
+        <div class="step-num">4</div>
+        <div class="step-text">
+          <h3>Acompanha em direto</h3>
+          <p>Durante o serviço recebes o check-in, fotos e notas de quem está com o teu animal. Sabes como ele está sem ter de perguntar.</p>
+        </div>
+        <img class="step-art" src="images/steps/step4-acompanhar.svg" alt="" loading="lazy" />
       </div>
     </div>
   </div>

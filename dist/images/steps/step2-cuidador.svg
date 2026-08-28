@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" fill="none" role="img" aria-label="Tutor ligado a um cuidador verificado">
+  <g stroke="#1a1a18" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="34" cy="26" r="12"/>
+    <path d="M16 58a18 18 0 0 1 36 0z"/>
+  </g>
+  <path d="M52 56c14 6 18 20 12 30" stroke="#7a9e6e" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 7"/>
+  <path d="M96 96c14-4 20-16 18-28" stroke="#7a9e6e" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="6 7"/>
+  <circle cx="80" cy="88" r="24" fill="none" stroke="#7a9e6e" stroke-width="2.4"/>
+  <g fill="#4f6b46">
+    <ellipse cx="71" cy="81" rx="2.8" ry="3.8"/>
+    <ellipse cx="80" cy="78.5" rx="2.8" ry="4"/>
+    <ellipse cx="89" cy="81" rx="2.8" ry="3.8"/>
+    <ellipse cx="80" cy="93" rx="7" ry="5.6"/>
+  </g>
+  <g stroke="#1a1a18" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="126" cy="42" r="12"/>
+    <path d="M108 74a18 18 0 0 1 36 0z"/>
+  </g>
+  <circle cx="140" cy="88" r="14" fill="#6f9663"/>
+  <path d="M134 88l4.4 4.4L147 83.5" stroke="#fdffe6" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

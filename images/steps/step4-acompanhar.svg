@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" fill="none" role="img" aria-label="Telemóvel a receber atualizações durante o serviço">
+  <g stroke="#1a1a18" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="58" y="16" width="72" height="112" rx="12"/>
+    <path d="M84 24h20"/>
+  </g>
+  <path d="M74 46h56a10 10 0 0 1 10 10v20a10 10 0 0 1-10 10H92l-9 9v-9h-9a10 10 0 0 1-10-10V56a10 10 0 0 1 10-10z"
+        fill="#fdffe6" stroke="#7a9e6e" stroke-width="2.4" stroke-linejoin="round"/>
+  <g stroke="#4f6b46" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M112 58a7 7 0 0 0-14 0c0 8-3.5 10-3.5 10h21S112 66 112 58"/>
+    <path d="M103 72.5a2.5 2.5 0 0 0 4 0"/>
+  </g>
+  <g fill="#7a9e6e">
+    <ellipse cx="28" cy="94" rx="3" ry="4"/>
+    <ellipse cx="38" cy="91" rx="3" ry="4.2"/>
+    <ellipse cx="48" cy="94" rx="3" ry="4"/>
+    <ellipse cx="38" cy="106" rx="7.5" ry="6"/>
+  </g>
+  <g stroke="#7a9e6e" stroke-width="2.2" stroke-linecap="round">
+    <path d="M138 26l5-6M146 36h7M141 46l5 5"/>
+  </g>
+</svg>
